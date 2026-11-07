@@ -11,6 +11,15 @@ const colors = [
   ["Acento rosa", "--pink", "#ff91a4"],
   ["Azul profundo", "--blue", "#303f7c"],
   ["Acción", "--action", "#c80c17"],
+  ["Azul eléctrico", "Banner / muestra", "#0E37D0"],
+  ["Lavanda azulada", "Banner / muestra", "#696EA4"],
+  ["Celeste", "Banner / muestra", "#619FDE"],
+  ["Verde oscuro", "Banner / muestra", "#073E0B"],
+  ["Ámbar", "Banner / muestra", "#C67A0E"],
+  ["Coral", "Banner / muestra", "#D8505A"],
+  ["Rosa", "Banner / muestra", "#CF5288"],
+  ["Lila claro", "Banner / muestra", "#DFBEDF"],
+  ["Crema", "Banner / muestra", "#E8D6CA"],
 ];
 for (const [name, token, value] of colors) {
   const b = document.createElement("button");

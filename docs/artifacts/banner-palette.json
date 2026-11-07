@@ -1,0 +1,42 @@
+{
+  "source": "src/assets/banner.webp",
+  "method": "Representative 30x30px area averages; approximate palette of the grainy photograph, not flat brand tokens.",
+  "colors": [
+    {
+      "name": "Azul eléctrico",
+      "hex": "#0E37D0"
+    },
+    {
+      "name": "Lavanda azulada",
+      "hex": "#696EA4"
+    },
+    {
+      "name": "Celeste",
+      "hex": "#619FDE"
+    },
+    {
+      "name": "Verde oscuro",
+      "hex": "#073E0B"
+    },
+    {
+      "name": "Ámbar",
+      "hex": "#C67A0E"
+    },
+    {
+      "name": "Coral",
+      "hex": "#D8505A"
+    },
+    {
+      "name": "Rosa",
+      "hex": "#CF5288"
+    },
+    {
+      "name": "Lila claro",
+      "hex": "#DFBEDF"
+    },
+    {
+      "name": "Crema",
+      "hex": "#E8D6CA"
+    }
+  ]
+}

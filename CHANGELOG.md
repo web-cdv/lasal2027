@@ -51,3 +51,12 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Liquid glass en la barra de entradas; WhatsApp verde con icono vectorial.
 - Reveals en Áreas, actividades y fechas Live; controles de movimiento reducido.
 - Padding de todas las secciones comprobado en siete tamaños; sistema de diseño y PRD actualizados.
+
+## 2026-11-07 — Motion, skeleton real y revisión de glass
+
+- Entrada escalonada del hero con Motion y sección intermedia de texto ligado al scroll.
+- Respuesta elástica de los filtros FAQ, manteniendo teclado y selección accesible.
+- Skeleton real del fondo y fotografía, wipe al cargar, timeout de 12s y reintentos; HTML y fuentes fallback siempre visibles.
+- Eliminadas sombras de texto, cajas y filtros; glass adaptado al código suministrado sin countdown vencido.
+- Paleta HEX muestreada del banner guardada para el próximo ajuste de ReactBits.
+- Referencias web solicitadas devolvieron 403; se adaptaron los efectos descritos y el adjunto Vue a Motion JavaScript, sin afirmar una copia exacta ni añadir React/Vue.

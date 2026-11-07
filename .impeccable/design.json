@@ -3,13 +3,7 @@
   "generatedAt": "2026-11-07T05:06:24.883421+00:00",
   "title": "Design System: La Sal 2027",
   "extensions": {
-    "shadows": [
-      {
-        "name": "navigation",
-        "value": "-18px 0 50px rgba(12,20,60,.24)",
-        "purpose": "Modal side panel."
-      }
-    ],
+    "shadows": [],
     "motion": [
       {
         "name": "heading-reveal",
@@ -59,6 +53,14 @@
       "menu": "Paper event index, numbered links, pill toggle.",
       "controls": "Light liquid glass ticket capsule; bright green WhatsApp; pill filters.",
       "motion": "One-shot route draw and reveals; ribbon can pause and stops offscreen, on focus and under reduced motion."
+    },
+    "motionRevision": {
+      "source": "src/motion-effects.js",
+      "hero": "75ms stagger, 650ms entrance",
+      "statement": "Scroll-linked line fill; all text always present",
+      "faq": "Decorative jelly fill and radio marker, aria-pressed buttons retained",
+      "loading": "Real image loading, 600ms wipe, timeout/error retry, text always available",
+      "shadows": "None; latest user request overrides earlier shadow examples"
     }
   },
   "components": [

@@ -6,6 +6,8 @@ import "./legacy-components.css";
 import "./live.css";
 import "./styles.css";
 import "./expressive.css";
+import "./motion-effects.css";
+import { initMotionEffects, jellyFilter } from "./motion-effects.js";
 import { animate, inView } from "motion";
 const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 const reduced = motionPreference.matches;
@@ -21,13 +23,6 @@ if (!reduced) {
     { opacity: [1, 0] },
     { duration: 0.3, delay: 1 },
   ).finished.then(() => document.querySelector(".arrival")?.remove());
-  animate(".is-hero__title", {
-    opacity: [0.8, 1], transform: ["translateY(12px)", "translateY(0)"]
-  }, { duration: 0.7, ease: [0.22, 1, 0.36, 1] });
-  animate(".date-route", {
-    opacity: [0.8, 1], transform: ["translateY(8px)", "translateY(0)"]
-  }, { duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] });
-  animate(".date-route__line", { strokeDasharray: ["0 1", "1 1"] }, { duration: 1.4, delay: 0.2, ease: "easeInOut" });
   inView(
     ".section > h2, .ls-live__intro > header, .ls-row, .ar-card, .ls-live__day",
     (e) => {
@@ -41,22 +36,7 @@ if (!reduced) {
     { amount: 0.3 },
   );
 } else document.querySelector(".arrival")?.remove();
-for (const img of document.querySelectorAll(".media-shell img")) {
-  const done = () => img.parentElement.classList.add("loaded");
-  img.addEventListener("load", done, { once: true });
-  img.addEventListener(
-    "error",
-    () => {
-      done();
-      img.parentElement.classList.add("failed");
-    },
-    { once: true },
-  );
-  if (img.complete) {
-    done();
-    if (!img.naturalWidth) img.parentElement.classList.add("failed");
-  }
-}
+initMotionEffects(motionPreference);
 const dialog = document.querySelector(".lasal-nav-dialog"),
   toggle = document.querySelector(".lasal-nav-toggle");
 let destinationFocus = null;
@@ -93,7 +73,7 @@ dialog.addEventListener("close", () => {
       { once: true },
     );
     destinationFocus = null;
-  } else toggle.focus();
+  } else if (document.activeElement === document.body || dialog.contains(document.activeElement)) toggle.focus();
 });
 dialog.addEventListener("click", (e) => {
   if (e.target === dialog) closeMenu();
@@ -133,6 +113,7 @@ filters.forEach((b) =>
     search.value = "";
     filters.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
     filter();
+    jellyFilter(b, filters, motionPreference.matches);
   }),
 );
 search.addEventListener("input", () => filter());

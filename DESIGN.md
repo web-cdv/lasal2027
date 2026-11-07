@@ -166,3 +166,23 @@ This iteration supersedes the continuous navy scrim from the previous refinement
 
 Reference: Passion 27 and the user-supplied https://salt2026.com/home/.
 No external artwork, fonts or videos were copied.
+
+
+## Motion y revisión sin sombras — 2026-11-07
+
+La petición más reciente elimina box-shadow, text-shadow y drop-shadow de todas las
+superficies. La barra adapta el código de liquid glass suministrado: degradado oscuro,
+blur 25px, saturación 200%, bordes asimétricos claros y botón blanco. Se refuerza la
+parte izquierda del degradado para sostener la etiqueta; no se restaura el countdown
+ya vencido del 3 de octubre de 2026. El contorno fino del texto del banner permanece;
+no es una sombra ni un velo sobre la fotografía.
+
+Motion: hero con stagger de 75ms y entrada de 650ms; línea de fechas en 1,2s.
+Sección intermedia de cuatro frases con relleno ligado al scroll, sin fijar la página.
+Filtros FAQ conservan botones aria-pressed y añaden un indicador elástico decorativo.
+Skeletons conectados a carga real de imágenes, wipe de 600ms al cargar y reintento
+tras error/12s; no se simula una espera para textos HTML ni se bloquea toda la web.
+Movimiento reducido cancela entradas y animaciones de scroll.
+
+Paleta fotográfica aproximada: docs/artifacts/banner-palette.json. No sustituye
+los tokens funcionales de marca; se entrega para el próximo ajuste de ReactBits.

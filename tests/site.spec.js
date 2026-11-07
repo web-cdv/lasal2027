@@ -151,3 +151,53 @@ test("ribbon can be paused and follows reduced motion changes", async ({ page })
   await expect(toggle).toBeHidden();
   await expect(page.locator(".ribbon-track")).toHaveCSS("animation-name", "none");
 });
+
+test("hero background failure keeps text available and can retry", async ({ page }) => {
+  let blocked = true;
+  await page.route("**/assets/banner-*.webp*", route => blocked ? route.abort() : route.continue());
+  await page.goto("/");
+  await expect(page.locator(".hero-surface")).toHaveAttribute("data-media-state", "error");
+  await expect(page.locator("h1")).toContainText("Imagen");
+  await expect(page.locator(".event-intro p")).toBeVisible();
+  blocked = false;
+  await page.getByRole("button", { name: "Reintentar fondo" }).click();
+  await expect(page.locator(".hero-surface")).toHaveAttribute("data-media-state", "ready");
+});
+
+test("failed image skeleton can recover without reloading the page", async ({ page }) => {
+  let blocked = true;
+  await page.route("**/assets/programa-*.webp*", route => blocked ? route.abort() : route.continue());
+  await page.goto("/");
+  await page.locator(".program img").scrollIntoViewIfNeeded();
+  await expect(page.locator(".media-shell")).toHaveClass(/failed/);
+  blocked = false;
+  await page.getByRole("button", { name: "Reintentar imagen" }).click();
+  await expect(page.locator(".media-shell")).not.toHaveClass(/failed/);
+  await expect(page.locator(".media-shell")).toHaveAttribute("aria-busy", "false");
+  expect(await page.locator(".program img").evaluate(e => e.naturalWidth > 0)).toBeTruthy();
+});
+
+test("scroll text follows viewport and stays readable under reduced motion", async ({ page }) => {
+  await page.goto("/");
+  const line = page.locator(".scroll-line__ink").first();
+  const initial = await line.evaluate(e => getComputedStyle(e).clipPath);
+  await page.locator("#statement-title").scrollIntoViewIfNeeded();
+  await expect.poll(() => line.evaluate(e => getComputedStyle(e).clipPath)).not.toBe(initial);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(line).toHaveCSS("clip-path", "none");
+  await expect(page.locator("#statement-title")).toContainText("Ayudar y animar");
+});
+
+test("rapid jelly filter changes preserve the last selection and keyboard behavior", async ({ page }) => {
+  await page.goto("/");
+  for (const name of ["Registro", "Otros", "Extranjero", "General", "Registro"]) {
+    await page.getByRole("button", { name, exact: true }).click();
+  }
+  const selected = page.getByRole("button", { name: "Registro", exact: true });
+  await expect(selected).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator('.faq-filters [aria-pressed="true"]')).toHaveCount(1);
+  await expect(page.locator(".faq-list details:visible")).toHaveCount(4);
+  await page.getByRole("button", { name: "General", exact: true }).focus();
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("button", { name: "General", exact: true })).toHaveAttribute("aria-pressed", "true");
+});

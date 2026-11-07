@@ -40,3 +40,12 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Artefacto autónomo regenerado, demo operativa, sin errores JS.
 - Comprobador de recursos probado sobre build; maneja correctamente SVG inline con referencias internas de filtros.
 - Safari/Firefox y dispositivos físicos siguen pendientes. Liquid glass tiene fallback opaco cuando no existe soporte de backdrop-filter.
+
+## Motion y glass sin sombras
+
+- Build y 14 pruebas Playwright aprobadas: hero con fallo/reintento, fotografía con fallo/reintento, texto ligado al scroll y movimiento reducido, cambios rápidos de categorías y teclado.
+- Revisión móvil de sección intermedia y filtros; sin overflow a 320/390/768/1440px.
+- Skeletons sólo durante carga real; sin JavaScript el HTML y las imágenes nativas siguen disponibles. Feedback absoluto para evitar saltos al resolver el fondo.
+- Corregida recuperación de foco: un evento close tardío del menú no roba foco a un control ya activo.
+- Artefacto autónomo regenerado, acción de prueba operativa sin errores JS.
+- Efectos adaptados con Motion JavaScript a partir de la descripción y adjuntos: las tres URLs externas respondieron 403 y no se afirma equivalencia visual exacta.

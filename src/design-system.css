@@ -144,4 +144,4 @@
 
 .ds-glass-demo { padding: 64px 24px; }
 .ds-poster { color: white; }
-.ds-poster p { paint-order: stroke fill; -webkit-text-stroke: 1px #282144; text-shadow: 0 2px 4px #282144; }
+.ds-poster p { paint-order: stroke fill; -webkit-text-stroke: 1px #282144; text-shadow: none; }

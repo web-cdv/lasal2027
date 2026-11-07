@@ -49,3 +49,11 @@ Implementados: banner sin velo oscuro con grano, fechas conectadas, párrafo bla
 centrado dentro del banner, cintillo pausable, glass en entradas, pills, WhatsApp verde
 y menú de índice editorial. Mantener padding uniforme y movimiento reducido.
 Referencia adicional confirmada por el usuario: https://salt2026.com/home/.
+
+## Animaciones y carga progresiva
+
+Hero escalonado, sección editorial ligada al scroll y selección elástica de categorías.
+La carga nunca sustituye textos estáticos por skeletons ni bloquea la página completa.
+Imágenes con estados loading/ready/error y reintento, siempre con salida tras 12s.
+La siguiente iteración de ReactBits espera el ajuste del usuario: paleta entregada,
+fondo actual conservado. Quitar sombras y usar el glass suministrado sin timer vencido.
