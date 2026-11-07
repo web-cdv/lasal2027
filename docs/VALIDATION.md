@@ -57,3 +57,10 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Grainient WebGL2 comprobado en Chromium con SwiftShader: canvas listo a 1440px y 390px, sin errores JavaScript ni overflow móvil; pérdida de contexto oculta el canvas y conserva el fondo original.
 - Revisión visual de hero, menú y FAQ a 320/390/1440px. En móvil, título y regla de Tendremos empiezan ambos a 20px.
 - Adaptación del código de React Bits con licencia incluida en public/react-bits-license.txt. Safari/Firefox y GPU de dispositivos físicos pendientes de verificación.
+
+## 2026-11-07 — Fondo fiel a la referencia y tipografía limpia
+
+- Eliminados todos los contornos de texto del hero y del ejemplo del sistema de diseño, sin añadir sombras.
+- Imagen original como base visible, encuadrada al 100% × 140% desde arriba para conservar azul, horizonte verde/ámbar y rosa inferior.
+- Grainient mezcla soft-light al 32%: ocho muestras del arte original, lavanda/azul/celeste/verde/ámbar/coral/rosa/crema. Movimiento más lento (.35), menor seda (.12), grano .13 y tamaño 1.6. Textura adicional al 46%; se preservan las fibras originales.
+- Build y 14 pruebas aprobadas. Capturas desktop/móvil y contorno computado de 0px comprobados.

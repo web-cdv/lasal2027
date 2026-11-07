@@ -137,12 +137,13 @@ void main() {
   }
   s = clamp(s, 0.0, 1.0);
   float scaled;
-  if (s < 0.32) scaled = s / 0.32;
-  else if (s < 0.44) scaled = 1.0 + (s - 0.32) / 0.12;
-  else if (s < 0.49) scaled = 2.0 + (s - 0.44) / 0.05;
-  else if (s < 0.58) scaled = 3.0 + (s - 0.49) / 0.09;
-  else if (s < 0.80) scaled = 4.0 + (s - 0.58) / 0.22;
-  else scaled = 5.0 + (s - 0.80) / 0.20;
+  if (s < 0.16) scaled = s / 0.16;
+  else if (s < 0.35) scaled = 1.0 + (s - 0.16) / 0.19;
+  else if (s < 0.43) scaled = 2.0 + (s - 0.35) / 0.08;
+  else if (s < 0.48) scaled = 3.0 + (s - 0.43) / 0.05;
+  else if (s < 0.61) scaled = 4.0 + (s - 0.48) / 0.13;
+  else if (s < 0.87) scaled = 5.0 + (s - 0.61) / 0.26;
+  else scaled = 6.0 + (s - 0.87) / 0.13;
   int index = int(min(floor(scaled), float(uCount - 2)));
   float f = scaled - float(index);
   float edge = max(uSoftness * 0.5, fwidth(scaled) * 0.75);
@@ -263,9 +264,9 @@ export function initGrainient(container) {
   canvas.setAttribute('aria-hidden', 'true');
   container.prepend(canvas);
   const settings = {
-    colors: ['#173ece', '#379cc9', '#07653c', '#f98a16', '#eb4b3a', '#ec2db0', '#e8bcfb'],
-    type: 0, angle: 170, bands: 1, speed: 0.6, flow: 0.7, scale: 0.3,
-    softness: 1, silk: 0.37, grainAmount: 0.08, grainSize: 1.2,
+    colors: ['#696EA4', '#0E37D0', '#619FDE', '#073E0B', '#C67A0E', '#D8505A', '#CF5288', '#E8D6CA'],
+    type: 0, angle: 190, bands: 1, speed: 0.35, flow: 0.45, scale: 0.65,
+    softness: 1, silk: 0.12, grainAmount: 0.13, grainSize: 1.6,
     grainAnimated: false, contrast: 1.01, saturation: 1, variation: 11,
     interactive: true, stir: 0.9, clickSwirl: false, intro: false, lightMode: false, dpr: 1
   };

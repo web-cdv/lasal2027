@@ -49,7 +49,7 @@
     ],
     "campaign": {
       "source": "src/expressive.css",
-      "hero": "Seven-color Grainient shader with photographic stop spacing, fixed grain, original image fallback; no blanket scrim.",
+      "hero": "Original artwork retained as the visible base, eight sampled colors in a soft-light Grainient layer at 32%, slower movement, stronger grain; white text without strokes or shadows.",
       "menu": "Right staggered drawer, lilac/violet prelayers, paper index, real section links and social links.",
       "controls": "Light liquid glass ticket capsule; bright green WhatsApp; pill filters.",
       "motion": "32s autonomous ribbon, no scroll binding, pauses on hover/focus/tap and offscreen. Reduced motion is static."
