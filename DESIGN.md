@@ -18,7 +18,7 @@ colors:
 typography:
   display:
     fontFamily: "IBM Plex Mono, monospace"
-    fontSize: "50px"
+    fontSize: "clamp(38px,5.3vw,76px)"
     fontWeight: 400
     lineHeight: 0.98
     letterSpacing: "-2px"
@@ -64,7 +64,7 @@ components:
     backgroundColor: "{colors.card}"
     textColor: "{colors.ink}"
     rounded: "{rounded.control}"
-    padding: "40px 36px"
+    padding: "32px"
 ---
 
 # Design System: La Sal 2027
@@ -91,19 +91,19 @@ Live uses a lavender/pink/cream translucent gradient over the banner, with dark 
 
 IBM Plex Mono is the display and body family, with monospace fallback; weights 400, 500, 600, and 700 are self-hosted through @fontsource/ibm-plex-mono. Uppercase display headings and tightly spaced dates create the poster character. Body paragraphs keep generous line height; program and Live copy use a maximum of 65 characters where specified.
 
-The hero title uses the display token at desktop and 36px on narrower screens; its ampersand and dates have separate sizes in the retained component. Section headlines use the fluid headline token. Live has a distinct fluid title (`clamp(40px,6vw,80px)`) with a mobile override. Activity figures descend from 120px to 88px and 72px. Area copy is 14px; hero footer text is overridden to 14px for legibility. Avoid restoring the original 9px mobile footer.
+The hero title scales from 38px to 76px; its ampersand and dates retain their own hierarchy. White text sits directly on the supplied photograph with a single continuous navy scrim, never separate rectangles behind each label. The introduction continues onto the paper surface. Section headlines use the fluid headline token. Live has a distinct fluid title (`clamp(40px,6vw,80px)`) with a mobile override. Activity figures descend from 120px to 88px and 72px. Activity and area copy are 16px; hero footer text is overridden to 14px for legibility. Avoid restoring the original 9px mobile footer.
 
 ## Layout
 
 Sections span the page, using the documented gutters and vertical rhythm. At 1024px the program's two columns become one, and at 640px section spacing becomes compact. The area grid has twelve tracks with three unequal cards followed by two equal cards; tablet shows two columns and mobile one. Preserve the actual content order.
 
-FAQ tools and accordions are capped at 900px. Live starts with a two-column introduction and date/content schedule rows; those stack at 900px, and campus columns stack at 600px. Legacy hero/navigation rules additionally use 767px and a 370px or short-height adjustment.
+FAQ tools and accordions align with the section gutters; answers are capped at 75ch. Shared `--page-inset` adds centering above a 1440px content width. Navigation, introduction, Program, Areas, activities and Live all use this inset. Live starts with a two-column introduction and date/content schedule rows; those stack at 900px, and campus columns stack at 600px. Legacy hero/navigation rules additionally use 767px and a 370px or short-height adjustment.
 
 The floating actions are centered with a maximum width of 800px and 16px side clearance. WhatsApp sits above the ticket capsule. JavaScript measures their combined height for bottom clearance; the footer reserves that space. Keep content and keyboard focus reachable around these controls.
 
 ## Elevation & Depth
 
-Paper texture, translucent overlays, and fine rules supply most depth. Area cards retain a soft resting shadow (`0 8px 24px rgba(0,0,0,.08)`) and a stronger hover shadow (`0 14px 32px rgba(0,0,0,.13)`); the independent stylesheet disables their former upward hover movement. The navigation panel uses a lateral shadow (`-18px 0 50px rgba(12,20,60,.24)`). The ticket bar uses translucency and a 16px backdrop blur.
+Paper texture, translucent overlays, and fine rules supply most depth. Area cards retain the original pale gray and asymmetric grid, with a fine border and no shadow or hover lift. They are informational, not clickable. The navigation panel uses a lateral shadow (`-18px 0 50px rgba(12,20,60,.24)`). The ticket bar uses translucency and a 16px backdrop blur.
 
 ## Shapes
 
@@ -113,11 +113,11 @@ Most controls and area cards have gently softened corners using the control radi
 
 Primary buttons use action red with white text, a minimum 48px height, and a darker hover. Ticket buttons use paper with ink and a pill shape. Keyboard focus uses a 3px focus-colored outline offset by 5px.
 
-FAQ search uses a visible label, dark input, light text, a 54px minimum height, and rounded corners. Category buttons expose selection with `aria-pressed`; the selected button switches to paper and ink. Questions use native `details`/`summary`, ruled rows, and spacious answers. Search results are announced through a status region.
+FAQ search uses a visible label, dark input, light text, a 54px minimum height, and rounded corners. Category buttons expose selection with `aria-pressed`; the selected button uses pink text and a thicker underline. Disclosure indicators change from plus to cross without replacing native summary semantics. Questions use native `details`/`summary`, ruled rows, and spacious answers. Search results are announced through a status region.
 
 Navigation uses a centered white logo and a blue modal panel. Keep the dialog's close control, Escape handling, and focus restoration. Area cards preserve indices 01–05 and natural title wrapping. Live uses date rows and campus columns rather than extra decorative cards.
 
-The image shell reserves its aspect ratio and shows a 1.5s shimmer while loading, then the photograph or a failure message. Motion provides a brief arrival indicator and subtle heading reveals; content is visible before animation. Reduced motion disables animation/transitions and smooth scrolling, removes the arrival indicator, and retains a static placeholder. Never use the entrance treatment to block access to the page.
+The image shell reserves its aspect ratio and shows a 1.5s shimmer while loading, then the photograph or a failure message. Motion provides a brief arrival indicator, 600–700ms hero/section entries, 600ms activity row reveals and a 250ms menu entry; content is visible before animation. Reduced motion disables animation/transitions and smooth scrolling, removes the arrival indicator, and retains a static placeholder. Never use the entrance treatment to block access to the page.
 
 ## Do's and Don'ts
 
@@ -130,3 +130,20 @@ The image shell reserves its aspect ratio and shows a 1.5s shimmer while loading
 - Don't infer unimplemented visual states or a dark-mode switch from this palette.
 
 Source: `src/styles.css`, `src/legacy-components.css`, `src/live.css`, and the original-site review in `docs/audit/REVISION-LA-SAL.md`. The sidecar contains extension metadata and representative component previews; CSS remains the implementation source.
+
+
+## Refinement with UI/UX Pro Max — 2026-11-07
+
+The user's original blocks remain the authority. UI/UX Pro Max supplies spacing,
+contrast, input and motion guidance, not a replacement palette or font pairing.
+The generic Outfit / Work Sans recommendation was rejected in favor of IBM Plex Mono.
+
+- Shared vertical rhythm: 80 / 64 / 48px; area card padding: 32 / 28 / 24px.
+- Do not place opaque boxes behind the hero title, dates, month or location.
+- Keep the original paper, grain, photograph, year circles and section sequence.
+- Reserve floating-action clearance in both the hero and page end; maintain scroll padding.
+- Use real utility for interaction: local section links, keyboard FAQ and campus maps.
+- Do not make noninteractive cards look clickable, animate counters from zero,
+  hijack scrolling, autoplay video or add dependency-heavy decoration.
+
+Research and limits: [reference review](docs/audit/UI-UX-REFINEMENT.md).

@@ -35,3 +35,10 @@ Browser checks should cover mobile overflow, navigation focus, FAQ, reduced moti
 ## Next experiment — after baseline publication to Git
 
 Explore a hero composition inspired by the user-provided date artwork: 26, 27 and 28 connected by a thin line ending at mayo; retain La Sal identity, photographic color treatment and grain. Assess subtle animation with a reduced-motion alternative. Design mobile independently rather than scaling a desktop image. This experiment is not implemented in the baseline.
+
+## Ajuste visual solicitado — 2026-11-07
+
+Restaurar fidelidad a los widgets originales: eliminar cajas de contraste del banner,
+normalizar gutters y ritmo vertical, conservar la identidad tipográfica/fotográfica,
+y aportar interacción útil con Motion existente, navegación, FAQ y mapas de campus.
+Referencias revisadas y decisiones en `docs/audit/UI-UX-REFINEMENT.md`.

@@ -19,13 +19,19 @@ if (!reduced) {
     { opacity: [1, 0] },
     { duration: 0.3, delay: 1 },
   ).finished.then(() => document.querySelector(".arrival")?.remove());
+  animate(".is-hero__title", {
+    opacity: [0.8, 1], transform: ["translateY(12px)", "translateY(0)"]
+  }, { duration: 0.7, ease: [0.22, 1, 0.36, 1] });
+  animate(".is-hero__dates", {
+    opacity: [0.8, 1], transform: ["translateY(8px)", "translateY(0)"]
+  }, { duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] });
   inView(
-    ".section > h2",
+    ".section > h2, .ls-live__intro > header, .ls-row",
     (e) => {
       animate(
         e,
-        { opacity: [0.7, 1], transform: ["translateY(12px)", "translateY(0)"] },
-        { duration: 0.45 },
+        { opacity: [0.85, 1], transform: ["translateY(16px)", "translateY(0)"] },
+        { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
       );
     },
     { amount: 0.3 },
@@ -54,6 +60,9 @@ const closeMenu = () => dialog.close();
 toggle.addEventListener("click", () => {
   dialog.showModal();
   dialog.classList.add("is-visible");
+  if (!reduced) animate(dialog.querySelector(".lasal-nav-links"),
+    { opacity: [0.8, 1], transform: ["translateY(8px)", "translateY(0)"] },
+    { duration: 0.25, ease: [0.22, 1, 0.36, 1] });
   toggle.setAttribute("aria-expanded", "true");
   document.body.classList.add("menu-open");
 });

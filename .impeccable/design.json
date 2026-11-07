@@ -1,19 +1,9 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-07T04:41:12.430789+00:00",
+  "generatedAt": "2026-11-07T05:06:24.883421+00:00",
   "title": "Design System: La Sal 2027",
   "extensions": {
     "shadows": [
-      {
-        "name": "area-rest",
-        "value": "0 8px 24px rgba(0,0,0,.08)",
-        "purpose": "Area card at rest."
-      },
-      {
-        "name": "area-hover",
-        "value": "0 14px 32px rgba(0,0,0,.13)",
-        "purpose": "Area hover without translation."
-      },
       {
         "name": "navigation",
         "value": "-18px 0 50px rgba(12,20,60,.24)",
@@ -23,7 +13,7 @@
     "motion": [
       {
         "name": "heading-reveal",
-        "value": "450ms; opacity .7 to 1; translateY 12px to 0",
+        "value": "600ms; opacity .85 to 1; translateY 16px to 0",
         "purpose": "Motion in-view decorative heading reveal."
       },
       {
@@ -93,14 +83,14 @@
       "kind": "button",
       "description": "Category filter from the current homepage.",
       "html": "<button class=\"ds-filter\" aria-pressed=\"true\">General</button> <button class=\"ds-filter\" aria-pressed=\"false\">Registro</button>",
-      "css": ".ds-filter{padding:12px 18px;border:1px solid currentColor;border-radius:4px;background:#343434;color:white;font:16px \"IBM Plex Mono\",monospace;cursor:pointer}.ds-filter[aria-pressed=true]{background:var(--paper,#f6f2e9);color:var(--ink,#242424)}.ds-filter:hover{background:#ffffff18;color:#242424}.ds-filter:focus-visible{outline:3px solid #566ed2;outline-offset:5px}"
+      "css": ".ds-filter{padding:12px 18px;border:1px solid currentColor;border-radius:4px;background:#343434;color:white;font:16px \"IBM Plex Mono\",monospace;cursor:pointer}.ds-filter[aria-pressed=true]{background:transparent;color:#ff91a4;border-bottom:3px solid #ff91a4}.ds-filter:hover{background:#ffffff18;color:#242424}.ds-filter:focus-visible{outline:3px solid #566ed2;outline-offset:5px}"
     },
     {
       "name": "Area card",
       "kind": "card",
       "description": "Area card from the current homepage.",
       "html": "<article class=\"ds-area\"><span class=\"ds-index\">01</span><h3>Alabanzas</h3><p>Este equipo guía a las personas a vivir una experiencia con Dios a través de la alabanza.</p></article>",
-      "css": ".ds-area{padding:40px 36px;background:#F2F2F2;color:#242424;border:1px solid #CFCFCF;border-radius:4px;font-family:\"IBM Plex Mono\",monospace;box-shadow:0 8px 24px rgba(0,0,0,.08);transition:background .3s,box-shadow .3s}.ds-area:hover{background:#E7E7E7;box-shadow:0 14px 32px rgba(0,0,0,.13)}.ds-index{display:block;font-size:11px;letter-spacing:.15em;margin-bottom:32px}.ds-area h3{font-size:clamp(17px,2vw,23px)}.ds-area p{font-size:14px;line-height:1.8}",
+      "css": ".ds-area{padding:32px;background:#F2F2F2;color:#242424;border:1px solid #CFCFCF;border-radius:4px;font-family:\"IBM Plex Mono\",monospace;box-shadow:none;transition:background .3s,box-shadow .3s}.ds-area:hover{background:#F2F2F2;box-shadow:none}.ds-index{display:block;font-size:11px;letter-spacing:.15em;margin-bottom:32px}.ds-area h3{font-size:clamp(17px,2vw,23px)}.ds-area p{font-size:16px;line-height:1.8}",
       "refersTo": "area-card"
     },
     {

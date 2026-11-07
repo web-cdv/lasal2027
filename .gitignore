@@ -8,3 +8,5 @@ dist/
 test-results/
 playwright-report/
 .agents/skills/impeccable/scripts/bin/
+__pycache__/
+*.pyc

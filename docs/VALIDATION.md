@@ -15,3 +15,17 @@
 - Impeccable polish: revisión visual independiente y correcciones de semántica, foco, fuentes y fallback completadas.
 
 Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor de hosting, dominio final, CMS, propiedad GA real y migración de las páginas secundarias enlazadas a WordPress. No se alteró WordPress ni DNS.
+
+## Refinamiento UI/UX Pro Max — 2026-11-07
+
+- Build completado y **9 pruebas Playwright aprobadas**, incluyendo menú por teclado en horizontal.
+- Comprobación visual/layout a 320, 390, 768, 844 (horizontal), 1440 y 1920px: sin overflow;
+  navegación, introducción y secciones comparten el mismo inset.
+- Contraste del banner muestreado en capturas con texto oculto, sobre los rectángulos de cada
+  etiqueta: mínimo 4,37:1 en titulares grandes (requisito 3:1) y 5,12:1 en textos pequeños
+  (requisito 4,5:1). Métricas conservadas en `docs/audit/layout-refinement.json`.
+- Axe A/AA sin infracciones detectadas en portada móvil y sistema de diseño.
+- Artefacto HTML autocontenido regenerado, acción de demostración operativa, sin errores JS.
+- Bundle principal: aproximadamente 23,5 KB gzip. Sin librerías nuevas de ejecución ni vídeo.
+- Limitaciones: referencias externas parcialmente animadas; resultados en Chromium,
+  no una certificación ni comprobación de todos los navegadores/dispositivos.

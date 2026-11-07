@@ -119,3 +119,20 @@ test("internal menu links move keyboard focus to destination", async ({
     .click();
   await expect(page.locator("#la-sal-live")).toBeFocused();
 });
+
+test("all menu destinations remain keyboard-reachable in landscape", async ({ page }) => {
+  await page.setViewportSize({ width: 844, height: 390 });
+  await page.goto("/");
+  await page.locator(".lasal-nav-toggle").click();
+  await page.locator(".lasal-nav-close").focus();
+  const links = page.locator(".lasal-nav-links a");
+  for (let i = 0; i < await links.count(); i++) {
+    await page.keyboard.press("Tab");
+    await expect(links.nth(i)).toBeFocused();
+    const box = await links.nth(i).boundingBox();
+    expect(box.y).toBeGreaterThanOrEqual(0);
+    expect(box.y + box.height).toBeLessThanOrEqual(390);
+  }
+  await page.keyboard.press("Escape");
+  await expect(page.locator(".lasal-nav-toggle")).toBeFocused();
+});

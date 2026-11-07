@@ -137,3 +137,7 @@
     gap: 12px;
   }
 }
+
+.ds-poster { padding: 64px 24px; text-align: center; }
+.ds-poster-title { font-size: clamp(32px, 5vw, 64px); line-height: 1.1; text-transform: uppercase; }
+.ds-poster-date { margin: 0; font-size: 24px; }

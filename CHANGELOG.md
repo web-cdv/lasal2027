@@ -24,3 +24,13 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Preview keeps staging noindex settings and analytics disabled. Hosting does not modify WordPress or its domain.
 
 - GitHub Pages activation and deployment succeeded through the workflow. Verified HTTP 200 for the homepage and design system, mobile layout, images, FAQ filtering, and no JavaScript errors in the smoke test. Preview: https://web-cdv.github.io/lasal2027/.
+
+## 2026-11-07 — Fidelidad visual y UI/UX Pro Max
+
+- Eliminados los rectángulos del hero; contraste mediante una capa continua sobre el grano original.
+- Unificados gutters, ritmo vertical, títulos y tamaño de lectura en Áreas/Tendremos.
+- Simplificadas sombras de tarjetas y filtros FAQ; corregida numeración y disposición del menú.
+- Añadidos mapas de sedes y entradas breves con Motion; conservado movimiento reducido.
+- Actualizados sistema de diseño, artefacto, PRD y documentación de referencias.
+- Incorporadas las skills instaladas por `uipro init --ai codex`.
+- Validación: build y 9 pruebas aprobadas; seis tamaños revisados, contraste sobre imagen medido y artefacto autocontenido verificado.
