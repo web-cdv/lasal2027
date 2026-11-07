@@ -136,3 +136,18 @@ test("all menu destinations remain keyboard-reachable in landscape", async ({ pa
   await page.keyboard.press("Escape");
   await expect(page.locator(".lasal-nav-toggle")).toBeFocused();
 });
+
+test("ribbon can be paused and follows reduced motion changes", async ({ page }) => {
+  await page.goto("/");
+  const toggle = page.locator(".ribbon-toggle");
+  await toggle.scrollIntoViewIfNeeded();
+  await toggle.click();
+  await expect(toggle).toHaveAttribute("aria-pressed", "true");
+  await expect(toggle).toHaveText("Reanudar cintillo");
+  await expect(page.locator(".ribbon-track")).toHaveCSS("animation-play-state", "paused");
+  await toggle.click();
+  await expect(toggle).toHaveAttribute("aria-pressed", "false");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(toggle).toBeHidden();
+  await expect(page.locator(".ribbon-track")).toHaveCSS("animation-name", "none");
+});

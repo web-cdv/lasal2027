@@ -141,3 +141,7 @@
 .ds-poster { padding: 64px 24px; text-align: center; }
 .ds-poster-title { font-size: clamp(32px, 5vw, 64px); line-height: 1.1; text-transform: uppercase; }
 .ds-poster-date { margin: 0; font-size: 24px; }
+
+.ds-glass-demo { padding: 64px 24px; }
+.ds-poster { color: white; }
+.ds-poster p { paint-order: stroke fill; -webkit-text-stroke: 1px #282144; text-shadow: 0 2px 4px #282144; }

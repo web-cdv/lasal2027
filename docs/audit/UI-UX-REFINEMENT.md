@@ -49,3 +49,23 @@ sin añadir GSAP ni React.
 
 Validación final en `docs/VALIDATION.md`. Los análisis automáticos no sustituyen una
 prueba completa con lectores de pantalla o dispositivos físicos.
+
+## Segunda propuesta: campaña y referencia SALT correcta
+
+El usuario proporcionó https://salt2026.com/home/: esta ruta devuelve 200 y se revisó
+su HTML y capturas en Chromium. Muestra «How Great Thou Art», «For those who make
+Sunday happen», fechas 14–16 octubre en Dallas, un cintillo rojo superior, fondo crema,
+color fotográfico y fotografía con textura. La portada tiene contenido animado que no
+se capturó por completo; no se afirma haber auditado toda la web.
+El dominio saltconference.com conduce a otro evento financiero y fue descartado.
+
+Se tomaron jerarquía de evento, cintillo, textura y ritmo entre superficies. La Sal
+conserva su material original. La nueva propuesta responde a la corrección explícita
+sobre el párrafo: dentro del banner, después de público/ubicación, blanco y centrado.
+
+UI/UX Pro Max: consultas `glassmorphism contrast --domain style` y
+`auto rotation pause animation --domain ux`. Aplicadas con moderación: glass sólo en
+entradas; cintillo con pausa y respeto a movimiento reducido; sin nuevas dependencias.
+Las métricas de contraste del scrim en layout-refinement.json son históricas y NO
+corresponden a este banner sin scrim. La nueva propuesta protege el texto con un halo
+local y mantiene las imágenes sin oscurecer.

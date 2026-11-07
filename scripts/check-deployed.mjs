@@ -27,8 +27,9 @@ async function check() {
   await Promise.all([
     ...scripts.map((src) => read(new URL(src, site), /javascript/)),
     ...images.map((src) => read(new URL(src, site), /image\//)),
-    ...css.flatMap(({url, text}) => [...text.matchAll(/url\(["']?([^\s)'" ]+)["']?\)/g)]
-      .map((match) => match[1]).filter((src) => !src.startsWith("data:"))
+    ...css.flatMap(({url, text}) => [...text.matchAll(/url\(\s*(?:"([^"]*)"|'([^']*)'|([^\s)]*))\s*\)/g)]
+      .map((match) => match[1] ?? match[2] ?? match[3])
+      .filter((src) => !src.startsWith("data:") && !src.startsWith("#"))
       .map((src) => read(new URL(src, url), /image\/|font\/|application\/.*(font|woff|octet-stream)/)))
   ]);
   console.log(`Published build verified: ${site} (CSS, JS, images and CSS resources)`);

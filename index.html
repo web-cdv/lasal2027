@@ -4,6 +4,7 @@
       <img decoding="async" src="/src/assets/logo.png" alt="Conferencia La Sal">
     </a>
     <button class="lasal-nav-toggle" type="button" aria-expanded="false" aria-haspopup="dialog" aria-controls="lasal-nav-dialog">
+      <span class="menu-word" aria-hidden="true">Menú</span>
       <span class="lasal-nav-icon" aria-hidden="true">
         <span class="lasal-nav-line"></span>
         <span class="lasal-nav-line"></span>
@@ -15,7 +16,7 @@
   <dialog class="lasal-nav-dialog" id="lasal-nav-dialog" aria-labelledby="lasal-nav-title">
     <div class="lasal-nav-panel">
       <div class="lasal-nav-panel-top">
-        <p class="lasal-nav-eyebrow" id="lasal-nav-title">Explora La Sal</p>
+        <p class="lasal-nav-eyebrow" id="lasal-nav-title">La Sal / Índice</p>
         <button class="lasal-nav-close" type="button">
           <span class="lasal-sr-only">Cerrar menú</span>
         </button>
@@ -37,14 +38,17 @@
         <span class="is-hero__title-amp">&amp;</span>
         <span>Semejanza</span>
       </h1>
-      <p class="is-hero__dates" aria-label="26, 27 y 28 de mayo de 2027">
-        <span>(26</span>
-        <span class="is-hero__dash" aria-hidden="true">—</span>
-        <span>27</span>
-        <span class="is-hero__dash" aria-hidden="true">—</span>
-        <span>28)</span>
-      </p>
-      <p class="is-hero__month">Mayo</p>
+      <div class="date-route" role="img" aria-label="Conferencia: 26, 27 y 28 de mayo de 2027">
+        <svg class="date-route__drawing" viewBox="0 0 1000 250" aria-hidden="true" preserveAspectRatio="none">
+          <path class="date-route__line" d="M90 65 L340 205 L610 105 L870 190" pathLength="1"></path>
+        </svg>
+        <ol class="date-route__labels" aria-hidden="true">
+          <li class="route-26"><span>26</span><b>✦</b></li>
+          <li class="route-27"><span>27</span><b>✦</b></li>
+          <li class="route-28"><span>28</span><b>✦</b></li>
+          <li class="route-month"><span>Mayo</span><b>✦</b></li>
+        </ol>
+      </div>
       <div class="is-hero__year" aria-label="2027" role="img">
         <svg class="is-hero__year-digit" viewBox="0 0 100 100" aria-hidden="true">
           <mask id="is-year-mask-2a" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
@@ -91,7 +95,15 @@
     </footer>
   </div>
 </section>
-</div><div class="event-intro"><p>La Sal – conferencia creativa y de liderazgo de caminodevida diseñada para ayudar y animar a pastores y a sus equipos creativos a avanzar con la visión que Dios ha dado a sus iglesias. Del 26 al 28 de mayo del 2027 + quédate a La Sal Live, 29 y 30 de mayo.</p></div><section class="section paper program" id="programa" aria-labelledby="program-title"><div class="media-shell"><img src="/src/assets/programa.webp" alt="Participantes compartiendo una fotografía en la conferencia La Sal" width="1067" height="794" loading="lazy" decoding="async"></div><div><h2 id="program-title">Programa</h2><p>Aquí te presentamos el programa de la conferencia. Además, te invitamos a quedarte para La Sal Live, el Sábado 29 y Domingo 30 mayo donde te mostraremos el detrás de escenas de cada equipo que hace funcionar la iglesia (ministerios juveniles y servicios dominicales).</p><ul class="schedule-list"><li>Miércoles 26 — 6 p. m. a 8 p. m.</li><li>Jueves 27 — 10 a. m. a 8 p. m.</li><li>Viernes 28 — 10 a. m. a 7 p. m.</li></ul><a class="button" href="https://conferencialasal.com/programa/">Ver programa completo</a></div></section><section class="section dark" id="tendremos" aria-labelledby="activities-title"><h2 id="activities-title">Tendremos</h2><div class="ls-wrap">
+<div class="event-intro"><p>La Sal – conferencia creativa y de liderazgo de caminodevida diseñada para ayudar y animar a pastores y a sus equipos creativos a avanzar con la visión que Dios ha dado a sus iglesias. Del 26 al 28 de mayo del 2027 + quédate a La Sal Live, 29 y 30 de mayo.</p></div></div><div class="event-ribbon" role="region" aria-label="Fechas de la conferencia">
+  <p class="lasal-sr-only">La Sal: 26–28 mayo 2027. La Sal Live: 29–30 mayo. Lima, Perú.</p>
+  <div class="ribbon-window" aria-hidden="true"><div class="ribbon-track">
+    <span class="ribbon-copy">26—28 MAYO / LA SAL <i>✳</i> 29—30 MAYO / LA SAL LIVE <i>✳</i> LIMA, PERÚ <i>✳</i></span>
+    <span class="ribbon-copy">26—28 MAYO / LA SAL <i>✳</i> 29—30 MAYO / LA SAL LIVE <i>✳</i> LIMA, PERÚ <i>✳</i></span>
+  </div></div>
+  <button class="ribbon-toggle" type="button" aria-pressed="false" hidden="">Pausar cintillo</button>
+</div>
+<section class="section paper program" id="programa" aria-labelledby="program-title"><div class="media-shell"><img src="/src/assets/programa.webp" alt="Participantes compartiendo una fotografía en la conferencia La Sal" width="1067" height="794" loading="lazy" decoding="async"></div><div><h2 id="program-title">Programa</h2><p>Aquí te presentamos el programa de la conferencia. Además, te invitamos a quedarte para La Sal Live, el Sábado 29 y Domingo 30 mayo donde te mostraremos el detrás de escenas de cada equipo que hace funcionar la iglesia (ministerios juveniles y servicios dominicales).</p><ul class="schedule-list"><li>Miércoles 26 — 6 p. m. a 8 p. m.</li><li>Jueves 27 — 10 a. m. a 8 p. m.</li><li>Viernes 28 — 10 a. m. a 7 p. m.</li></ul><a class="button" href="https://conferencialasal.com/programa/">Ver programa completo</a></div></section><section class="section dark" id="tendremos" aria-labelledby="activities-title"><h2 id="activities-title">Tendremos</h2><div class="ls-wrap">
   <div class="ls-row">
     <div class="ls-cell">
       <div class="ls-num">7</div>
@@ -330,4 +342,4 @@ Tel: (511) 348-1202<br>
 <p>No podrán ingresar niños ni bebés por falta de espacio apropiado para ellos.</p>
 </div></details><details data-category="otros" data-keywords="contacto email dudas ayuda"><summary>¿Preguntas adicionales?</summary><div class="faq-answer">
 <p>Escríbenos a <a href="mailto:eventos@caminodevida.com">eventos@caminodevida.com</a></p>
-</div></details></div></section></main><footer class="site-footer">La Sal · caminodevida · Lima, Perú · 2027<button type="button" id="privacy-settings" hidden="">Preferencias de analítica</button></footer><aside class="floating-actions" aria-label="Entradas y contacto"><a class="whatsapp" href="https://wa.me/51993520544?text=Hola%2C%20quisiera%20informaci%C3%B3n%20de%20La%20Sal" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp <span aria-hidden="true">↗</span></a><div class="ticket-bar"><p>Preventa <span>$55</span></p><a class="button button-light" href="https://www.eventbrite.com.pe/e/registro-conferencia-la-sal-2027-2002826896161">Comprar entradas</a></div></aside><aside class="consent" aria-label="Preferencias de analítica" hidden=""><p>Podemos usar Google Analytics para entender cómo se utiliza la web. Tú eliges si permites estas mediciones.</p><button type="button" data-consent="yes">Aceptar analítica</button><button type="button" data-consent="no">Continuar sin analítica</button></aside><script type="module" src="/src/main.js"></script></body></html>
+</div></details></div></section></main><footer class="site-footer">La Sal · caminodevida · Lima, Perú · 2027<button type="button" id="privacy-settings" hidden="">Preferencias de analítica</button></footer><aside class="floating-actions" aria-label="Entradas y contacto"><a class="whatsapp" href="https://wa.me/51993520544?text=Hola%2C%20quisiera%20informaci%C3%B3n%20de%20La%20Sal" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.5 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.3-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6L8.8 6.8c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 2.9 1.3 3.1c.1.2 2.2 3.3 5.3 4.7.8.3 1.4.5 1.8.6.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.5Z"></path></svg><span>Escríbenos <span class="lasal-sr-only">por WhatsApp</span></span><span aria-hidden="true">↗</span></a><div class="ticket-bar"><p>Preventa <span>$55</span></p><a class="button button-light" href="https://www.eventbrite.com.pe/e/registro-conferencia-la-sal-2027-2002826896161">Comprar entradas</a></div></aside><aside class="consent" aria-label="Preferencias de analítica" hidden=""><p>Podemos usar Google Analytics para entender cómo se utiliza la web. Tú eliges si permites estas mediciones.</p><button type="button" data-consent="yes">Aceptar analítica</button><button type="button" data-consent="no">Continuar sin analítica</button></aside><script type="module" src="/src/main.js"></script></body></html>

@@ -42,3 +42,10 @@ Restaurar fidelidad a los widgets originales: eliminar cajas de contraste del ba
 normalizar gutters y ritmo vertical, conservar la identidad tipográfica/fotográfica,
 y aportar interacción útil con Motion existente, navegación, FAQ y mapas de campus.
 Referencias revisadas y decisiones en `docs/audit/UI-UX-REFINEMENT.md`.
+
+## Propuesta de campaña — 2026-11-07
+
+Implementados: banner sin velo oscuro con grano, fechas conectadas, párrafo blanco
+centrado dentro del banner, cintillo pausable, glass en entradas, pills, WhatsApp verde
+y menú de índice editorial. Mantener padding uniforme y movimiento reducido.
+Referencia adicional confirmada por el usuario: https://salt2026.com/home/.

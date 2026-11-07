@@ -5,8 +5,10 @@ import "@fontsource/ibm-plex-mono/latin-700.css";
 import "./legacy-components.css";
 import "./live.css";
 import "./styles.css";
+import "./expressive.css";
 import { animate, inView } from "motion";
-const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
+const reduced = motionPreference.matches;
 // Content is present from first paint; entrance is decorative and never blocks input.
 if (!reduced) {
   animate(
@@ -22,12 +24,14 @@ if (!reduced) {
   animate(".is-hero__title", {
     opacity: [0.8, 1], transform: ["translateY(12px)", "translateY(0)"]
   }, { duration: 0.7, ease: [0.22, 1, 0.36, 1] });
-  animate(".is-hero__dates", {
+  animate(".date-route", {
     opacity: [0.8, 1], transform: ["translateY(8px)", "translateY(0)"]
   }, { duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] });
+  animate(".date-route__line", { strokeDasharray: ["0 1", "1 1"] }, { duration: 1.4, delay: 0.2, ease: "easeInOut" });
   inView(
-    ".section > h2, .ls-live__intro > header, .ls-row",
+    ".section > h2, .ls-live__intro > header, .ls-row, .ar-card, .ls-live__day",
     (e) => {
+      if (motionPreference.matches) return;
       animate(
         e,
         { opacity: [0.85, 1], transform: ["translateY(16px)", "translateY(0)"] },
@@ -60,7 +64,7 @@ const closeMenu = () => dialog.close();
 toggle.addEventListener("click", () => {
   dialog.showModal();
   dialog.classList.add("is-visible");
-  if (!reduced) animate(dialog.querySelector(".lasal-nav-links"),
+  if (!motionPreference.matches) animate(dialog.querySelector(".lasal-nav-links"),
     { opacity: [0.8, 1], transform: ["translateY(8px)", "translateY(0)"] },
     { duration: 0.25, ease: [0.22, 1, 0.36, 1] });
   toggle.setAttribute("aria-expanded", "true");
@@ -185,3 +189,21 @@ if (ga) {
     }),
   );
 }
+
+// A moving ribbon is optional: pause, reduced motion, focus and offscreen states all stop it.
+const ribbon = document.querySelector(".event-ribbon");
+const ribbonTrack = ribbon.querySelector(".ribbon-track");
+const ribbonToggle = ribbon.querySelector(".ribbon-toggle");
+let ribbonPaused = false, ribbonVisible = false;
+function updateRibbon() {
+  ribbonToggle.hidden = motionPreference.matches;
+  ribbonTrack.classList.toggle("is-moving", !motionPreference.matches);
+  ribbonTrack.classList.toggle("is-paused", ribbonPaused || !ribbonVisible || document.hidden);
+  ribbonToggle.setAttribute("aria-pressed", String(ribbonPaused));
+  ribbonToggle.textContent = ribbonPaused ? "Reanudar cintillo" : "Pausar cintillo";
+}
+ribbonToggle.addEventListener("click", () => { ribbonPaused = !ribbonPaused; updateRibbon(); });
+motionPreference.addEventListener("change", updateRibbon);
+document.addEventListener("visibilitychange", updateRibbon);
+new IntersectionObserver(([entry]) => { ribbonVisible = entry.isIntersecting; updateRibbon(); }).observe(ribbon);
+updateRibbon();

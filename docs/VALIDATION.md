@@ -29,3 +29,14 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Bundle principal: aproximadamente 23,5 KB gzip. Sin librerías nuevas de ejecución ni vídeo.
 - Limitaciones: referencias externas parcialmente animadas; resultados en Chromium,
   no una certificación ni comprobación de todos los navegadores/dispositivos.
+
+## Propuesta de campaña — banner sin velo y cintillo
+
+- Build completado; 10 pruebas aprobadas, incluyendo pausa/reanudación del cintillo y cambio de preferencia de movimiento.
+- Siete tamaños: 320, 375, 390, 768, 844 horizontal, 1440 y 1920px, sin overflow.
+- Programa, Tendremos, Áreas, Live y FAQ comparten padding: 48×20 móvil, 64×36 tablet, 80×56 escritorio y centrado en pantalla amplia. Métricas en campaign-layout.json.
+- Párrafo introductorio dentro de hero-surface, centrado y blanco, después del footer informativo.
+- Axe A/AA sin infracciones detectadas en las muestras. Las métricas antiguas del scrim NO describen este banner; la lectura sobre la fotografía usa contorno/sombra local y revisión visual.
+- Artefacto autónomo regenerado, demo operativa, sin errores JS.
+- Comprobador de recursos probado sobre build; maneja correctamente SVG inline con referencias internas de filtros.
+- Safari/Firefox y dispositivos físicos siguen pendientes. Liquid glass tiene fallback opaco cuando no existe soporte de backdrop-filter.

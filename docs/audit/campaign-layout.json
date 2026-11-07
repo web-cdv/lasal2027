@@ -1,0 +1,205 @@
+[
+  {
+    "width": 320,
+    "height": 900,
+    "overflow": false,
+    "sections": [
+      {
+        "id": "programa",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "tendremos",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "areas",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "la-sal-live",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "preguntas",
+        "padding": "48px 20px"
+      }
+    ],
+    "introInsideBanner": true,
+    "introColor": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 375,
+    "height": 812,
+    "overflow": false,
+    "sections": [
+      {
+        "id": "programa",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "tendremos",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "areas",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "la-sal-live",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "preguntas",
+        "padding": "48px 20px"
+      }
+    ],
+    "introInsideBanner": true,
+    "introColor": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "sections": [
+      {
+        "id": "programa",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "tendremos",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "areas",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "la-sal-live",
+        "padding": "48px 20px"
+      },
+      {
+        "id": "preguntas",
+        "padding": "48px 20px"
+      }
+    ],
+    "introInsideBanner": true,
+    "introColor": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "sections": [
+      {
+        "id": "programa",
+        "padding": "64px 36px"
+      },
+      {
+        "id": "tendremos",
+        "padding": "64px 36px"
+      },
+      {
+        "id": "areas",
+        "padding": "64px 36px"
+      },
+      {
+        "id": "la-sal-live",
+        "padding": "64px 36px"
+      },
+      {
+        "id": "preguntas",
+        "padding": "64px 36px"
+      }
+    ],
+    "introInsideBanner": true,
+    "introColor": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "overflow": false,
+    "sections": [
+      {
+        "id": "programa",
+        "padding": "64px 36px"
+      },
+      {
+        "id": "tendremos",
+        "padding": "64px 36px"
+      },
+      {
+        "id": "areas",
+        "padding": "64px 36px"
+      },
+      {
+        "id": "la-sal-live",
+        "padding": "64px 36px"
+      },
+      {
+        "id": "preguntas",
+        "padding": "64px 36px"
+      }
+    ],
+    "introInsideBanner": true,
+    "introColor": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1440,
+    "height": 1050,
+    "overflow": false,
+    "sections": [
+      {
+        "id": "programa",
+        "padding": "80px 56px"
+      },
+      {
+        "id": "tendremos",
+        "padding": "80px 56px"
+      },
+      {
+        "id": "areas",
+        "padding": "80px 56px"
+      },
+      {
+        "id": "la-sal-live",
+        "padding": "80px 56px"
+      },
+      {
+        "id": "preguntas",
+        "padding": "80px 56px"
+      }
+    ],
+    "introInsideBanner": true,
+    "introColor": "rgb(255, 255, 255)"
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "sections": [
+      {
+        "id": "programa",
+        "padding": "80px 240px"
+      },
+      {
+        "id": "tendremos",
+        "padding": "80px 240px"
+      },
+      {
+        "id": "areas",
+        "padding": "80px 240px"
+      },
+      {
+        "id": "la-sal-live",
+        "padding": "80px 240px"
+      },
+      {
+        "id": "preguntas",
+        "padding": "80px 240px"
+      }
+    ],
+    "introInsideBanner": true,
+    "introColor": "rgb(255, 255, 255)"
+  }
+]

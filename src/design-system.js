@@ -2,6 +2,7 @@ import "@fontsource/ibm-plex-mono/latin-400.css";
 import "@fontsource/ibm-plex-mono/latin-600.css";
 import "@fontsource/ibm-plex-mono/latin-700.css";
 import "./styles.css";
+import "./expressive.css";
 import "./design-system.css";
 const colors = [
   ["Papel", "--paper", "#f6f2e9"],

@@ -42,3 +42,12 @@ This log records implementation and local verification. Hosting/domain cutover h
 - El workflow exige Pages en modo `workflow` antes de desplegar y verifica los recursos públicos después. El cambio de Source requiere al administrador: la credencial disponible responde 403 al intentar modificarlo.
 - El administrador seleccionó GitHub Actions y la API confirmó `build_type: workflow`.
 - Nueva comprobación post-despliegue: rechaza HTML fuente y exige respuestas válidas de CSS, JS, imágenes y fuentes. Probada contra el build local; detecta correctamente la página sin compilar.
+
+## 2026-11-07 — Propuesta de campaña, Passion 27 y SALT 2026
+
+- Banner sin velo opaco, grano adicional y fechas conectadas con dibujo de línea.
+- Párrafo introductorio blanco y centrado dentro del banner, después de ubicación/público.
+- Cintillo de fechas pausable, menú de índice editorial, filtros/maps en pills.
+- Liquid glass en la barra de entradas; WhatsApp verde con icono vectorial.
+- Reveals en Áreas, actividades y fechas Live; controles de movimiento reducido.
+- Padding de todas las secciones comprobado en siete tamaños; sistema de diseño y PRD actualizados.

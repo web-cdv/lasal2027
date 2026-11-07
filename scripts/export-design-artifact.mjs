@@ -8,6 +8,7 @@ const mime = {
   ".woff2": "font/woff2",
   ".webp": "image/webp",
   ".png": "image/png",
+  ".svg": "image/svg+xml",
 };
 const data = (file) =>
   `data:${mime[path.extname(file)] || "application/octet-stream"};base64,${fs.readFileSync(file).toString("base64")}`;
@@ -15,11 +16,12 @@ $('link[rel="stylesheet"]').each((i, e) => {
   const file = path.resolve(root, $(e).attr("href"));
   let css = fs
     .readFileSync(file, "utf8")
-    .replace(/url\(["']?([^)'"\s]+)["']?\)/g, (all, u) =>
-      u.startsWith("data:")
+    .replace(/url\(\s*(?:"([^"]*)"|'([^']*)'|([^\s)]*))\s*\)/g, (all, double, single, bare) => {
+      const url = double ?? single ?? bare;
+      return url.startsWith("data:") || url.startsWith("#")
         ? all
-        : `url("${data(path.resolve(path.dirname(file), u))}")`,
-    );
+        : `url("${data(path.resolve(path.dirname(file), url))}")`;
+    });
   $(e).replaceWith(`<style>${css}</style>`);
 });
 $('link[rel="modulepreload"]').remove();
