@@ -58,3 +58,7 @@ For the managed cloud browser: `PLAYWRIGHT_EXECUTABLE_PATH=/usr/bin/chromium npm
 ## Shareable design artifact
 
 `docs/artifacts/design-system.html` embeds styles, fonts, images and the demo scripts in one file. Open it in a browser to review the visual system without installing dependencies. Rebuild it with `npm run build` followed by `node scripts/export-design-artifact.mjs`. Clipboard access may be restricted on local files; the value is also shown as text.
+
+## GitHub Pages preview
+
+The `Deploy preview to GitHub Pages` workflow publishes `dist/` from `main` at https://web-cdv.github.io/lasal2027/. The design system is available at https://web-cdv.github.io/lasal2027/design-system.html. The workflow deliberately leaves production URL and analytics unset: the preview requests no indexing and sends no GA events. GitHub Pages manages cache headers itself and does not apply `_headers`; those rules remain for a future compatible host. WordPress and its domain remain separate.

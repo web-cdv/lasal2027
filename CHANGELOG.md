@@ -17,3 +17,8 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Final validation: production build passed; all 8 Playwright tests passed, including axe checks on homepage and design-system artifact. Standalone artifact interactions/images verified. Production SEO and consent opt-in/revocation verified using an example URL and intercepted test GA ID; no real analytics event was sent.
 - Impeccable final review: ship after correcting self-hosted font documentation, cached image failure fallback, and destination focus after menu navigation.
 - Deferred experiment: banner dates connected by a line, photographic grain and subtle animation based on the supplied reference; develop after this baseline commit/push, with a mobile-specific composition.
+
+## 2026-11-06 — GitHub Pages preview
+
+- Added automatic GitHub Pages deployment from `main`, using the static `dist/` build and relative asset paths.
+- Preview keeps staging noindex settings and analytics disabled. Hosting does not modify WordPress or its domain.
