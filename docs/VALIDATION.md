@@ -102,3 +102,11 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Se retira al resolver fuentes e imagen del hero (mínimo450ms), o por límite1800ms más salida420ms. Sin porcentaje artificial ni esperas para contenido secundario.
 - Botón Entrar, Escape y foco de teclado fuera del loading permiten omitirlo. No bloquea scroll/puntero ni oculta el contenido semántico. Sin JS permanece oculto; con movimiento reducido se omite.
 - Probados carga detenida, omisión/foco al contenido, no-JS, movimiento reducido, teclado y axe. Captura revisada en escritorio.
+
+## 2026-11-07 — Loading oscuro, cursor y composición práctica
+
+- Sustituida apertura coloreada por fondo #101011, logo ensamblado en cuatro franjas y contador porcentual sin botón visible. El avance refleja resolución de fuentes, logo y hero, interpolado visualmente; no mide bytes. Límite1800ms independiente del porcentaje para recursos detenidos, sin forzar100 si fallan en resolver.
+- Escape/foco externo omiten el loading; sin JS o con movimiento reducido permanece fuera de vista.
+- Cursor inspirado en TargetCursor: esquinas rojas, giro2s, ajuste y parallax sutil en controles, sin dependencias adicionales. Sólo puntero preciso, desactivado en inputs, móvil, teclado y movimiento reducido.
+- Cómo llegar alineado a la derecha de nombre/dirección del campus con margen automático y wrap responsive; conserva enlaces reales.
+- Público/ubicación agrupados directamente encima del párrafo introductorio con40px,32px móvil. Campo claro del shader adelantado para dar contraste a ambos.

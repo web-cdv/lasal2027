@@ -164,7 +164,7 @@ test("hero background failure keeps text available and can retry", async ({ page
   await page.goto("/");
   await expect(page.locator(".hero-surface")).toHaveAttribute("data-media-state", "error");
   await expect(page.locator("h1")).toContainText("Imagen");
-  await expect(page.locator(".event-intro p")).toBeVisible();
+  await expect(page.locator(".event-intro > p")).toBeVisible();
   blocked = false;
   await page.getByRole("button", { name: "Reintentar fondo" }).click();
   await expect(page.locator(".hero-surface")).toHaveAttribute("data-media-state", "ready");
@@ -244,13 +244,14 @@ test('FAQ section keeps its height across categories and empty search', async ({
 });
 
 
-test('brand loading can be skipped and times out when hero is stalled', async({page})=>{
+test('brand loading has progress, allows Escape and times out when hero is stalled', async({page})=>{
  await page.route(/banner.*\.webp/,()=>{});
  await page.goto('/',{waitUntil:'domcontentloaded'});
  await expect(page.locator('.arrival')).toBeVisible();
- await page.getByRole('button',{name:'Entrar a la web'}).click();
+ await expect(page.getByRole("progressbar")).toBeVisible();
+ await expect(page.locator(".arrival button")).toHaveCount(0);
+ await page.keyboard.press("Escape");
  await expect(page.locator('.arrival')).toHaveCount(0);
- await expect(page.locator('#contenido')).toBeFocused();
  await page.reload({waitUntil:'domcontentloaded'});
  await expect(page.locator('.arrival')).toBeVisible();
  await expect(page.locator('.arrival')).toHaveCount(0,{timeout:3000});

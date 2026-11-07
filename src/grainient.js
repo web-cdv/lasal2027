@@ -139,7 +139,7 @@ void main() {
   }
   s = clamp(s, 0.0, 1.0);
   // Finish in a consistently pale field behind practical information.
-  s = mix(s, 1.0, 1.0 - smoothstep(0.0, 0.38, vUv.y));
+  s = mix(s, 1.0, 1.0 - smoothstep(0.0, 0.58, vUv.y));
   float scaled;
   if (s < 0.16) scaled = s / 0.16;
   else if (s < 0.35) scaled = 1.0 + (s - 0.16) / 0.19;
