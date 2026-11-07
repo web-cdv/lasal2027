@@ -34,3 +34,9 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Actualizados sistema de diseño, artefacto, PRD y documentación de referencias.
 - Incorporadas las skills instaladas por `uipro init --ai codex`.
 - Validación: build y 9 pruebas aprobadas; seis tamaños revisados, contraste sobre imagen medido y artefacto autocontenido verificado.
+
+## 2026-11-07 — Corrección de publicación
+
+- Detectado Pages en modo `legacy` publicando la raíz de main además del workflow Vite.
+  La publicación de código fuente podía sobrescribir `dist/` después de una comprobación correcta.
+- El workflow configura Pages en modo `workflow` antes de desplegar, evitando las dos fuentes competidoras.

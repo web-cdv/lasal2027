@@ -32,6 +32,13 @@ jobs:
         env:
           VITE_SITE_URL: ''
           VITE_GA_ID: ''
+      - name: Use Actions as the only Pages publishing source
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type)" != "workflow" ]; then
+            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
+          fi
       - uses: actions/configure-pages@v5
         with:
           enablement: true
