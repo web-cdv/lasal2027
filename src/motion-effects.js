@@ -135,18 +135,16 @@ export function initMotionEffects(preference) {
 
   let entrance = [];
   let scrollStops = [];
-  const ink = [...document.querySelectorAll(".scroll-line__ink")];
+  const words = [...document.querySelectorAll("#statement-title .reveal-word")];
   function setupScroll() {
     scrollStops.forEach((stop) => stop());
     scrollStops = [];
-    ink.forEach((line) => line.style.removeProperty("clip-path"));
+    words.forEach(word => { word.style.removeProperty("opacity"); word.style.removeProperty("filter"); });
 
     if (preference.matches) return;
-    for (const line of ink) {
-      const animation = animate(line, { clipPath: ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] }, { duration: 1, ease: "linear" });
-      const detach = scroll(animation, { target: line.parentElement, offset: ["start 90%", "end 45%"] });
-      scrollStops.push(() => { detach(); animation.cancel(); });
-    }
+    const animation = animate(words, { opacity: [.15, 1], filter: ["blur(4px)", "blur(0px)"] }, { duration: .8, delay: stagger(.2), ease: "linear" });
+    const detach = scroll(animation, { target: document.querySelector("#statement-title"), offset: ["start 85%", "end 40%"] });
+    scrollStops.push(() => { detach(); animation.cancel(); });
   }
   if (!preference.matches) {
     // Stagger without a blocking loader: content remains usable if JS is interrupted.

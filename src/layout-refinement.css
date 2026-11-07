@@ -144,3 +144,8 @@ body .ls-live .ls-live__day { border-top: 1px solid #878279 !important; }
 body .scroll-statement { padding-inline: 0; }
 body .scroll-statement > .statement-kicker, body .scroll-statement > h2 { margin-inline: var(--page-inset); }
 body .scroll-statement .mission-bands { width: 100%; max-width: none; }
+
+.reveal-word { display: inline-block; }
+body #is-hero .is-hero__footer { margin-top: 56px; }
+@media(max-width:640px) { body #is-hero .is-hero__footer { margin-top: 32px; } }
+@media(prefers-reduced-motion:reduce) { .reveal-word { opacity: 1 !important; filter: none !important; } }

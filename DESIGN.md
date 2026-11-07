@@ -222,3 +222,9 @@ El cintillo usa un bucle autónomo, independiente del scroll; consultar la revis
 - Tendremos plano sin hover iluminado; restauradas líneas estructurales en actividades, programa, Live y FAQ.
 - Verificados 320/390/768/1440/1920px sin overflow; un único h1, títulos consistentes. 15 pruebas aprobadas, incluido nuevo escaneo axe con menú abierto a 320px.
 - SEO: título/descripción, lang es, encabezados semánticos, imagen social, canonical/sitemap/robots y Event con organizador disponibles al configurar VITE_SITE_URL. Preview continúa noindex para evitar duplicar WordPress. Navegadores físicos y lector de pantalla requieren validación manual adicional.
+
+## 2026-11-07 — ScrollReveal por palabras
+
+- Texto de propósito revelado por palabras con Motion: scrub reversible ligado al scroll, fade .15→1, blur 4→0px, duración .8 y stagger .2; sin rotación, desplazamiento ni suavizado adicional.
+- Texto semántico presente en HTML sin duplicación; sin JavaScript y con movimiento reducido se muestra íntegro.
+- Fila de público/ubicación/dirección del hero bajada 56px en escritorio y 32px en móvil, manteniendo el color oscuro.

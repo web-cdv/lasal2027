@@ -97,3 +97,9 @@ This log records implementation and local verification. Hosting/domain cutover h
 - SEO: título/descripción, lang es, encabezados semánticos, imagen social, canonical/sitemap/robots y Event con organizador disponibles al configurar VITE_SITE_URL. Preview continúa noindex para evitar duplicar WordPress. Navegadores físicos y lector de pantalla requieren validación manual adicional.
 
 - Bandas Creatividad/Comunidad/Visión a todo el viewport, con repetición suficiente para pantallas amplias y recorte sin overflow. Separadores estructurales conservados; tarjetas y controles sin borde.
+
+## 2026-11-07 — ScrollReveal por palabras
+
+- Texto de propósito revelado por palabras con Motion: scrub reversible ligado al scroll, fade .15→1, blur 4→0px, duración .8 y stagger .2; sin rotación, desplazamiento ni suavizado adicional.
+- Texto semántico presente en HTML sin duplicación; sin JavaScript y con movimiento reducido se muestra íntegro.
+- Fila de público/ubicación/dirección del hero bajada 56px en escritorio y 32px en móvil, manteniendo el color oscuro.

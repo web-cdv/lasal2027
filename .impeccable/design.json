@@ -57,7 +57,7 @@
     "motionRevision": {
       "source": "src/motion-effects.js",
       "hero": "75ms stagger, 650ms entrance",
-      "statement": "Scroll-linked line fill; all text always present",
+      "statement": "Word scrub: fade .15 to 1, blur4px to0, .8 duration, .2 stagger, no smoothing, no rotation/offset; reduced motion fully visible.",
       "faq": "Joined plain pills; shared glide indicator, spring bounce .16, no intro, aria-pressed filters.",
       "loading": "Real image loading, 600ms wipe, timeout/error retry, text always available",
       "shadows": "None; latest user request overrides earlier shadow examples"

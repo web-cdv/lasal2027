@@ -180,12 +180,15 @@ test("failed image skeleton can recover without reloading the page", async ({ pa
 
 test("scroll text follows viewport and stays readable under reduced motion", async ({ page }) => {
   await page.goto("/");
-  const line = page.locator(".scroll-line__ink").first();
-  const initial = await line.evaluate(e => getComputedStyle(e).clipPath);
-  await page.locator("#statement-title").scrollIntoViewIfNeeded();
-  await expect.poll(() => line.evaluate(e => getComputedStyle(e).clipPath)).not.toBe(initial);
+  const word = page.locator(".reveal-word").first();
+  await expect.poll(()=>word.evaluate(e=>Number(getComputedStyle(e).opacity))).toBeLessThan(.2);
+  await page.locator("#statement-title").evaluate(e=>scrollTo({top:scrollY+e.getBoundingClientRect().bottom-innerHeight*.35,behavior:"instant"}));
+  await expect.poll(()=>word.evaluate(e=>Number(getComputedStyle(e).opacity))).toBeGreaterThan(.9);
+  await page.evaluate(()=>scrollTo(0,0));
+  await expect.poll(()=>word.evaluate(e=>Number(getComputedStyle(e).opacity))).toBeLessThan(.2);
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await expect(line).toHaveCSS("clip-path", "none");
+  await expect(word).toHaveCSS("opacity", "1");
+  await expect(word).toHaveCSS("filter", "none");
   await expect(page.locator("#statement-title")).toContainText("Ayudar y animar");
 });
 
