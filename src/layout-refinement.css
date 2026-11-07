@@ -140,3 +140,7 @@ body .schedule-list li { border-bottom: 1px solid #878279 !important; }
 body .faq-list details { border-bottom: 1px solid #858585 !important; }
 body .faq-list details:first-child { border-top: 1px solid #858585 !important; }
 body .ls-live .ls-live__day { border-top: 1px solid #878279 !important; }
+/* Full viewport bands; only the readable introduction keeps the page inset. */
+body .scroll-statement { padding-inline: 0; }
+body .scroll-statement > .statement-kicker, body .scroll-statement > h2 { margin-inline: var(--page-inset); }
+body .scroll-statement .mission-bands { width: 100%; max-width: none; }
