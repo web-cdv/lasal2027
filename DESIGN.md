@@ -234,3 +234,8 @@ El cintillo usa un bucle autónomo, independiente del scroll; consultar la revis
 - Ruta compacta con 26/27/28 inclinados, mayo en minúscula al lado del último punto, línea fina y estrellas pequeñas. Pie Conferencia La Sal 2027 / Lima – Perú. Tema Imagen & Semejanza secundario y año circular sustituido visualmente por el pie.
 - Azul ultramar profundo, coral más vivo, horizonte elevado y grano multiescala con agrupaciones, motas y fibras procedurales; sin imagen superpuesta.
 - Responsive sin overflow a 320/390/768/1440px. Se conserva el texto accesible con todas las fechas.
+
+## 2026-11-07 — Áreas claras y fondo anterior del banner
+
+- Áreas: vidrio esmerilado lavanda grisáceo translúcido, texto oscuro, sin borde/sombra. Spotlight circular blanco .15, 240px, suavidad .7, proximidad80, smoothing .3, flare activo, ambient desactivado. Validación: opacidad en reposo0 y hover .1496, responsive y axe aprobados.
+- Restaurado Grainient del commit 33d8f7f por aclaración del usuario: la referencia era sólo para la composición de fechas. Se mantienen fechas compactas/inclinadas y mayo en minúscula; no se aplican el nuevo grano ni la nueva paleta del póster.

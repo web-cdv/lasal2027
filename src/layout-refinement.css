@@ -177,3 +177,15 @@ body .date-route__labels b { font-size: 24px; }
  body .date-route__labels .route-month b { left: 50%; top: 100%; }
 }
 body #is-hero .poster-caption { width: 100%; text-align: left; }
+
+/* Pale frosted glass for Areas only; circular light appears on interaction. */
+body #areas .ar-card, body #areas .ar-card:hover {
+ background: linear-gradient(145deg,rgba(255,255,255,.24),rgba(232,228,240,.08)),rgba(219,216,230,.86);
+ color: #24212b;
+ backdrop-filter: blur(25px) saturate(160%);
+ -webkit-backdrop-filter: blur(25px) saturate(160%);
+ box-shadow: none;
+}
+@supports not (backdrop-filter:blur(1px)) {
+ body #areas .ar-card, body #areas .ar-card:hover { background: #e1deea; }
+}

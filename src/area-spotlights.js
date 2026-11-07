@@ -21,7 +21,7 @@ const falloff = (color, softness) => {
 export function initAreaSpotlights(preference) {
  for (const root of document.querySelectorAll('#areas .ar-card')) {
  const [light,noise,edge] = ['light','grain','edge'].map(name=>{const el=document.createElement('span');el.className='spotlight-card__'+name;el.setAttribute('aria-hidden','true');root.prepend(el);return el;});
- const settings={shape:'beam',fill:falloff('#18181b',.7),edge:falloff('#18181b',1),size:240,intensity:.15*.28,borderGlow:0,proximity:80,smoothing:.3,ambient:true,flare:true,grain:0};
+ const settings={shape:'circle',fill:falloff('#ffffff',.7),edge:falloff('#ffffff',1),size:240,intensity:.15,borderGlow:0,proximity:80,smoothing:.3,ambient:false,flare:true,grain:0};
  function mount() {
     let reduce = preference.matches;
     preference.addEventListener('change',()=>{reduce=preference.matches;wake();});

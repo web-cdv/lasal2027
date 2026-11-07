@@ -90,7 +90,7 @@ float coord(vec2 p) {
   vec2 w = warp(p);
   // Broad photographic horizon: a raised green/amber seam, not equal diagonal stripes.
   float horizon = 0.065 * sin((vUv.x + 0.08) * 4.2) + 0.035 * (vUv.x - 0.5);
-  return uType == 1 ? 1.0 - length(w) * 1.1 : dot(w, uDir) / uExtent + 0.56 + horizon;
+  return uType == 1 ? 1.0 - length(w) * 1.1 : dot(w, uDir) / uExtent + 0.5 + horizon;
 }
 
 vec3 labToRgb(vec3 lab) {
@@ -201,11 +201,6 @@ void main() {
   vec3 color = texture(uField, vUv).rgb;
   vec2 pixel = gl_FragCoord.xy + uFrame * vec2(17.0, 59.0);
   float fine = hash(pixel) + hash(pixel + 7.13) - 1.0;
-  // Multiscale emulsion: dense clusters, sparse dust and fine fibers.
-  float clusters = clump(pixel / 3.5) - 0.5;
-  float dust = step(0.9988, hash(floor(pixel / 1.7)));
-  float fibers = step(0.992, clump(vec2(pixel.x / 1.1, pixel.y / 12.0)));
-  fine = fine * 0.75 + clusters * 1.1 + dust * 1.8 + fibers * 0.7;
   float coarse = (clump(pixel / max(uGrainSize, 1.0)) - 0.5) * 2.0;
   float grain = mix(fine, coarse, clamp(uGrainSize - 1.0, 0.0, 1.0) * 0.8);
   float luma = dot(color, vec3(0.2126, 0.7152, 0.0722));
@@ -273,9 +268,9 @@ export function initGrainient(container) {
   canvas.setAttribute('aria-hidden', 'true');
   container.prepend(canvas);
   const settings = {
-    colors: ['#4e46ae', '#1819cc', '#62a4e2', '#063c0a', '#c28d0d', '#ed4b43', '#da548f', '#ead4c5'],
+    colors: ['#696EA4', '#0E37D0', '#619FDE', '#073E0B', '#C67A0E', '#D8505A', '#CF5288', '#E8D6CA'],
     type: 0, angle: 180, bands: 1, speed: 0.35, flow: 0.5, scale: 0.5,
-    softness: 1, silk: 0.12, grainAmount: 0.19, grainSize: 1.4,
+    softness: 1, silk: 0.12, grainAmount: 0.13, grainSize: 1.6,
     grainAnimated: false, contrast: 1.01, saturation: 1, variation: 11,
     interactive: true, stir: 0.9, clickSwirl: false, intro: false, lightMode: false, dpr: 1
   };
