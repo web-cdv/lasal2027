@@ -135,7 +135,12 @@ export function initMotionEffects(preference) {
     scrollStops.forEach((stop) => stop());
     scrollStops = [];
     ink.forEach((line) => line.style.removeProperty("clip-path"));
+    const ribbonTrack = document.querySelector(".ribbon-track");
+    ribbonTrack.style.removeProperty("transform");
     if (preference.matches) return;
+    const ribbonAnimation = animate(ribbonTrack, { x: ["0%", "-30%"] }, { duration: 1, ease: "linear" });
+    const detachRibbon = scroll(ribbonAnimation, { target: document.querySelector(".event-ribbon"), offset: ["start end", "end start"] });
+    scrollStops.push(() => { detachRibbon(); ribbonAnimation.cancel(); });
     for (const line of ink) {
       const animation = animate(line, { clipPath: ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] }, { duration: 1, ease: "linear" });
       const detach = scroll(animation, { target: line.parentElement, offset: ["start 90%", "end 45%"] });

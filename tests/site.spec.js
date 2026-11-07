@@ -137,19 +137,16 @@ test("all menu destinations remain keyboard-reachable in landscape", async ({ pa
   await expect(page.locator(".lasal-nav-toggle")).toBeFocused();
 });
 
-test("ribbon can be paused and follows reduced motion changes", async ({ page }) => {
+test("ribbon follows scrolling without an automatic loop or pause button", async ({ page }) => {
   await page.goto("/");
-  const toggle = page.locator(".ribbon-toggle");
-  await toggle.scrollIntoViewIfNeeded();
-  await toggle.click();
-  await expect(toggle).toHaveAttribute("aria-pressed", "true");
-  await expect(toggle).toHaveText("Reanudar cintillo");
-  await expect(page.locator(".ribbon-track")).toHaveCSS("animation-play-state", "paused");
-  await toggle.click();
-  await expect(toggle).toHaveAttribute("aria-pressed", "false");
+  await expect(page.locator(".ribbon-toggle")).toHaveCount(0);
+  const track = page.locator(".ribbon-track");
+  const initial = await track.evaluate(e => getComputedStyle(e).transform);
+  await page.locator(".event-ribbon").scrollIntoViewIfNeeded();
+  await expect.poll(() => track.evaluate(e => getComputedStyle(e).transform)).not.toBe(initial);
+  await expect(track).toHaveCSS("animation-name", "none");
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await expect(toggle).toBeHidden();
-  await expect(page.locator(".ribbon-track")).toHaveCSS("animation-name", "none");
+  await expect(track).toHaveCSS("transform", "none");
 });
 
 test("hero background failure keeps text available and can retry", async ({ page }) => {

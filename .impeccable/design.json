@@ -52,7 +52,7 @@
       "hero": "Original artwork, additional static grain, local text halo; no blanket scrim. Connected date route. White centered introduction inside hero.",
       "menu": "Paper event index, numbered links, pill toggle.",
       "controls": "Light liquid glass ticket capsule; bright green WhatsApp; pill filters.",
-      "motion": "One-shot route draw and reveals; ribbon can pause and stops offscreen, on focus and under reduced motion."
+      "motion": "One-shot route draw and reveals; ribbon follows user scrolling, has no autoplay or pause button, and is static under reduced motion."
     },
     "motionRevision": {
       "source": "src/motion-effects.js",

@@ -186,3 +186,7 @@ Movimiento reducido cancela entradas y animaciones de scroll.
 
 Paleta fotográfica aproximada: docs/artifacts/banner-palette.json. No sustituye
 los tokens funcionales de marca; se entrega para el próximo ajuste de ReactBits.
+
+Último ajuste: el cintillo no tiene botón de pausa ni reproducción automática.
+Su desplazamiento está ligado al scroll con Motion y se desactiva con movimiento reducido.
+Esto sustituye las reglas anteriores de reproducción/pausa del cintillo.

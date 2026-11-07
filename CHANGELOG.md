@@ -60,3 +60,4 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Eliminadas sombras de texto, cajas y filtros; glass adaptado al código suministrado sin countdown vencido.
 - Paleta HEX muestreada del banner guardada para el próximo ajuste de ReactBits.
 - Referencias web solicitadas devolvieron 403; se adaptaron los efectos descritos y el adjunto Vue a Motion JavaScript, sin afirmar una copia exacta ni añadir React/Vue.
+- Retirado el botón de pausar por petición del usuario. El cintillo ahora responde al scroll; sin bucle automático y estático con movimiento reducido.

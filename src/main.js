@@ -170,21 +170,3 @@ if (ga) {
     }),
   );
 }
-
-// A moving ribbon is optional: pause, reduced motion, focus and offscreen states all stop it.
-const ribbon = document.querySelector(".event-ribbon");
-const ribbonTrack = ribbon.querySelector(".ribbon-track");
-const ribbonToggle = ribbon.querySelector(".ribbon-toggle");
-let ribbonPaused = false, ribbonVisible = false;
-function updateRibbon() {
-  ribbonToggle.hidden = motionPreference.matches;
-  ribbonTrack.classList.toggle("is-moving", !motionPreference.matches);
-  ribbonTrack.classList.toggle("is-paused", ribbonPaused || !ribbonVisible || document.hidden);
-  ribbonToggle.setAttribute("aria-pressed", String(ribbonPaused));
-  ribbonToggle.textContent = ribbonPaused ? "Reanudar cintillo" : "Pausar cintillo";
-}
-ribbonToggle.addEventListener("click", () => { ribbonPaused = !ribbonPaused; updateRibbon(); });
-motionPreference.addEventListener("change", updateRibbon);
-document.addEventListener("visibilitychange", updateRibbon);
-new IntersectionObserver(([entry]) => { ribbonVisible = entry.isIntersecting; updateRibbon(); }).observe(ribbon);
-updateRibbon();

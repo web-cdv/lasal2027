@@ -49,3 +49,4 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Corregida recuperación de foco: un evento close tardío del menú no roba foco a un control ya activo.
 - Artefacto autónomo regenerado, acción de prueba operativa sin errores JS.
 - Efectos adaptados con Motion JavaScript a partir de la descripción y adjuntos: las tres URLs externas respondieron 403 y no se afirma equivalencia visual exacta.
+- Último ajuste del cintillo: 14 pruebas aprobadas con comprobación de desplazamiento ligado al scroll, ausencia de bucle automático y estado estático con movimiento reducido.
