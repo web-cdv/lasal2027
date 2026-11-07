@@ -64,3 +64,13 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Imagen original como base visible, encuadrada al 100% × 140% desde arriba para conservar azul, horizonte verde/ámbar y rosa inferior.
 - Grainient mezcla soft-light al 32%: ocho muestras del arte original, lavanda/azul/celeste/verde/ámbar/coral/rosa/crema. Movimiento más lento (.35), menor seda (.12), grano .13 y tamaño 1.6. Textura adicional al 46%; se preservan las fibras originales.
 - Build y 14 pruebas aprobadas. Capturas desktop/móvil y contorno computado de 0px comprobados.
+
+## 2026-11-07 — Auditoría tipográfica, menú y contraste
+
+- Menú alineado con StaggeredMenu: panel blanco, tipografía sans serif, enlaces negros, números/acento rojo; cierre textual con SVG pequeño, sin círculo doble ni cabecera negra. Corregida herencia que dejaba enlaces blancos sobre crema.
+- Escala fluida: cuerpo 16px, títulos de sección 32–64px, subtítulos 20–26px, hero 32–72px. Reglas de mayor especificidad neutralizan cambios de orden CSS del build.
+- Banner: transición clara adelantada en el shader y texto oscuro en ubicación/introducción. Sin superposición de fotografía.
+- SpotlightCard claro sólo en #areas: adaptación del código de React Bits con su función de caída, beam, ambient y flare, intensidad del tema claro y movimiento reducido. Sin sombras/borde por preferencia del usuario.
+- Tendremos plano sin hover iluminado; restauradas líneas estructurales en actividades, programa, Live y FAQ.
+- Verificados 320/390/768/1440/1920px sin overflow; un único h1, títulos consistentes. 15 pruebas aprobadas, incluido nuevo escaneo axe con menú abierto a 320px.
+- SEO: título/descripción, lang es, encabezados semánticos, imagen social, canonical/sitemap/robots y Event con organizador disponibles al configurar VITE_SITE_URL. Preview continúa noindex para evitar duplicar WordPress. Navegadores físicos y lector de pantalla requieren validación manual adicional.

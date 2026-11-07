@@ -202,3 +202,15 @@ test("rapid pill filter changes preserve the last selection and keyboard behavio
   await page.keyboard.press("Enter");
   await expect(page.getByRole("button", { name: "General", exact: true })).toHaveAttribute("aria-pressed", "true");
 });
+
+test('open menu remains readable and keyboard accessible at narrow widths', async ({page}) => {
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.setViewportSize({width:320,height:740});
+  await page.goto('/');
+  await page.locator('.lasal-nav-toggle').click();
+  const result = await new AxeBuilder({page}).include('dialog').withTags(['wcag2a','wcag2aa']).analyze();
+  expect(result.violations).toEqual([]);
+  expect(await page.locator('.lasal-nav-links').evaluate(el=>el.scrollWidth<=el.clientWidth)).toBeTruthy();
+  await page.getByRole('button',{name:'Cerrar menú'}).click();
+  await expect(page.locator('.lasal-nav-toggle')).toBeFocused();
+});

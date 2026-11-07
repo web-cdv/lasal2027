@@ -24,6 +24,8 @@ export default defineConfig(({ mode }) => {
             "@context": "https://schema.org",
             "@type": "Event",
             name: "La Sal 2027 — Imagen & Semejanza",
+            image: site + "/social-cover.webp",
+            organizer: { "@type": "Organization", name: "caminodevida", url: "https://cdv.pe" },
             startDate: "2027-05-26",
             endDate: "2027-05-28",
             eventAttendanceMode:
@@ -47,6 +49,8 @@ export default defineConfig(({ mode }) => {
               'content="index,follow"',
             ),
             tags: [
+              { tag: "meta", attrs: { property: "og:image", content: site + "/social-cover.webp" } },
+              { tag: "meta", attrs: { name: "twitter:image", content: site + "/social-cover.webp" } },
               { tag: "link", attrs: { rel: "canonical", href: site + "/" } },
               {
                 tag: "meta",
