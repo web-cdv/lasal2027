@@ -57,3 +57,12 @@ La carga nunca sustituye textos estáticos por skeletons ni bloquea la página c
 Imágenes con estados loading/ready/error y reintento, siempre con salida tras 12s.
 La siguiente iteración de ReactBits espera el ajuste del usuario: paleta entregada,
 fondo actual conservado. Quitar sombras y usar el glass suministrado sin timer vencido.
+
+## 2026-11-07 — Navegación, filtros y fondo Grainient
+
+- Cintillo autónomo de 32s, sin enlace al scroll ni botón separado. Pausa con foco, hover, toque, pestaña oculta o fuera de pantalla; estático con movimiento reducido.
+- Márgenes internos heredados de Elementor eliminados en Tendremos y Áreas; reglas alineadas al contenido. FAQ centrado con preguntas alineadas a la izquierda.
+- Menú lateral escalonado inspirado en StaggeredMenu: capas lila/violeta, numeración, enlaces reales y redes solicitadas, con diálogo nativo y Escape.
+- FAQ con General, Registro, Extranjero y Otros en una barra unida. Indicador compartido con glide y resorte bounce 0.16, sin intro ni colapso; selección accesible con aria-pressed.
+- Grainient de React Bits adaptado a JavaScript/WebGL2, carga separada de 5.4 KB gzip aprox. Siete colores; franjas azules amplias, verde/ámbar estrechas, coral/rosa/lila abajo. Ángulo 170° en las coordenadas del shader para conservar la composición vertical; flow .7, silk .37, grano .08, escala .3, velocidad .6, contraste 1.01, variación 11 y stir .9.
+- Grano fijo y textura superpuesta; resolución limitada a DPR 1, pausa fuera de pantalla/pestaña oculta y movimiento reducido. Imagen original de respaldo ante ausencia o pérdida de WebGL. No se modifica WordPress.

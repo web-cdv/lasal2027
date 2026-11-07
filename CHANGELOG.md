@@ -61,3 +61,12 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Paleta HEX muestreada del banner guardada para el próximo ajuste de ReactBits.
 - Referencias web solicitadas devolvieron 403; se adaptaron los efectos descritos y el adjunto Vue a Motion JavaScript, sin afirmar una copia exacta ni añadir React/Vue.
 - Retirado el botón de pausar por petición del usuario. El cintillo ahora responde al scroll; sin bucle automático y estático con movimiento reducido.
+
+## 2026-11-07 — Navegación, filtros y fondo Grainient
+
+- Cintillo autónomo de 32s, sin enlace al scroll ni botón separado. Pausa con foco, hover, toque, pestaña oculta o fuera de pantalla; estático con movimiento reducido.
+- Márgenes internos heredados de Elementor eliminados en Tendremos y Áreas; reglas alineadas al contenido. FAQ centrado con preguntas alineadas a la izquierda.
+- Menú lateral escalonado inspirado en StaggeredMenu: capas lila/violeta, numeración, enlaces reales y redes solicitadas, con diálogo nativo y Escape.
+- FAQ con General, Registro, Extranjero y Otros en una barra unida. Indicador compartido con glide y resorte bounce 0.16, sin intro ni colapso; selección accesible con aria-pressed.
+- Grainient de React Bits adaptado a JavaScript/WebGL2, carga separada de 5.4 KB gzip aprox. Siete colores; franjas azules amplias, verde/ámbar estrechas, coral/rosa/lila abajo. Ángulo 170° en las coordenadas del shader para conservar la composición vertical; flow .7, silk .37, grano .08, escala .3, velocidad .6, contraste 1.01, variación 11 y stir .9.
+- Grano fijo y textura superpuesta; resolución limitada a DPR 1, pausa fuera de pantalla/pestaña oculta y movimiento reducido. Imagen original de respaldo ante ausencia o pérdida de WebGL. No se modifica WordPress.

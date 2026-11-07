@@ -137,16 +137,20 @@ test("all menu destinations remain keyboard-reachable in landscape", async ({ pa
   await expect(page.locator(".lasal-nav-toggle")).toBeFocused();
 });
 
-test("ribbon follows scrolling without an automatic loop or pause button", async ({ page }) => {
+test("ribbon advances autonomously, pauses on interaction and respects reduced motion", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator(".ribbon-toggle")).toHaveCount(0);
+  const ribbon = page.locator(".event-ribbon");
   const track = page.locator(".ribbon-track");
+  await ribbon.scrollIntoViewIfNeeded();
+  await page.mouse.move(0, 0);
+  await expect(track).toHaveCSS("animation-play-state", "running");
   const initial = await track.evaluate(e => getComputedStyle(e).transform);
-  await page.locator(".event-ribbon").scrollIntoViewIfNeeded();
   await expect.poll(() => track.evaluate(e => getComputedStyle(e).transform)).not.toBe(initial);
-  await expect(track).toHaveCSS("animation-name", "none");
+  await ribbon.focus();
+  await expect(track).toHaveCSS("animation-play-state", "paused");
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await expect(track).toHaveCSS("transform", "none");
+  await expect(track).toHaveCSS("animation-name", "none");
 });
 
 test("hero background failure keeps text available and can retry", async ({ page }) => {
@@ -185,7 +189,7 @@ test("scroll text follows viewport and stays readable under reduced motion", asy
   await expect(page.locator("#statement-title")).toContainText("Ayudar y animar");
 });
 
-test("rapid jelly filter changes preserve the last selection and keyboard behavior", async ({ page }) => {
+test("rapid pill filter changes preserve the last selection and keyboard behavior", async ({ page }) => {
   await page.goto("/");
   for (const name of ["Registro", "Otros", "Extranjero", "General", "Registro"]) {
     await page.getByRole("button", { name, exact: true }).click();

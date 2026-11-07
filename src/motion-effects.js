@@ -1,21 +1,26 @@
 import { animate, stagger, scroll } from "motion";
 import bannerUrl from "./assets/banner.webp";
 
-const jellyAnimations = new Map();
-export function jellyFilter(selected, filters, reduced) {
-  for (const button of filters) {
-    jellyAnimations.get(button)?.forEach((animation) => animation.cancel());
-    jellyAnimations.delete(button);
+let pillAnimation;
+export function moveFaqPill(selected, filters, reduced) {
+  const options = selected.parentElement;
+  let indicator = options.querySelector(".faq-pill-glide");
+  if (!indicator) {
+    indicator = document.createElement("span");
+    indicator.className = "faq-pill-glide";
+    indicator.setAttribute("aria-hidden", "true");
+    options.append(indicator);
   }
-  if (reduced) return;
-  jellyAnimations.set(selected, [
-    animate(selected.querySelector(".filter-fill"), {
-      scaleX: [.94, 1.05, .99, 1], scaleY: [1.04, .94, 1.02, 1],
-    }, { duration: .48, ease: "easeOut" }),
-    animate(selected.querySelector(".filter-dot"), { scale: [.2, 1] }, {
-      type: "spring", stiffness: 500, damping: 18,
-    }),
-  ]);
+  if (!selected.offsetWidth) return;
+  filters.forEach(button => button.classList.toggle("pill-highlighted", button === selected));
+  const target = { left: selected.offsetLeft, top: selected.offsetTop, width: selected.offsetWidth, height: selected.offsetHeight };
+  pillAnimation?.stop();
+  if (reduced || !indicator.dataset.positioned) {
+    for (const [key, value] of Object.entries(target)) indicator.style[key] = `${value}px`;
+  } else {
+    pillAnimation = animate(indicator, target, { type: "spring", bounce: .16, duration: .4 });
+  }
+  indicator.dataset.positioned = "true";
 }
 
 function imageState(image, shell, preference) {
@@ -135,12 +140,8 @@ export function initMotionEffects(preference) {
     scrollStops.forEach((stop) => stop());
     scrollStops = [];
     ink.forEach((line) => line.style.removeProperty("clip-path"));
-    const ribbonTrack = document.querySelector(".ribbon-track");
-    ribbonTrack.style.removeProperty("transform");
+
     if (preference.matches) return;
-    const ribbonAnimation = animate(ribbonTrack, { x: ["0%", "-30%"] }, { duration: 1, ease: "linear" });
-    const detachRibbon = scroll(ribbonAnimation, { target: document.querySelector(".event-ribbon"), offset: ["start end", "end start"] });
-    scrollStops.push(() => { detachRibbon(); ribbonAnimation.cancel(); });
     for (const line of ink) {
       const animation = animate(line, { clipPath: ["inset(0 100% 0 0)", "inset(0 0% 0 0)"] }, { duration: 1, ease: "linear" });
       const detach = scroll(animation, { target: line.parentElement, offset: ["start 90%", "end 45%"] });
@@ -153,13 +154,33 @@ export function initMotionEffects(preference) {
     entrance.push(animate(group, { opacity: [.15, 1], y: [24, 0], filter: ["blur(6px)", "blur(0px)"] }, { duration: .65, delay: stagger(.075), ease: [.22, 1, .36, 1] }));
     entrance.push(animate(".date-route__line", { strokeDasharray: ["0 1", "1 1"] }, { duration: 1.2, delay: .25, ease: "easeInOut" }));
   }
+  const faqFilters = [...document.querySelectorAll(".faq-filters button")];
+  const options = document.querySelector(".faq-filter-options");
+  const selectedFilter = () => faqFilters.find(button => button.getAttribute("aria-pressed") === "true");
+  for (const button of faqFilters) {
+    button.addEventListener("pointerenter", () => moveFaqPill(button, faqFilters, preference.matches));
+    button.addEventListener("focus", () => moveFaqPill(button, faqFilters, preference.matches));
+  }
+  options.addEventListener("pointerleave", () => moveFaqPill(selectedFilter(), faqFilters, preference.matches));
+  options.addEventListener("focusout", () => moveFaqPill(selectedFilter(), faqFilters, preference.matches));
+  new ResizeObserver(() => moveFaqPill(selectedFilter(), faqFilters, true)).observe(options);
   setupScroll();
   preference.addEventListener("change", () => {
     if (preference.matches) {
       entrance.forEach((animation) => animation.cancel());
-      jellyAnimations.forEach((animations) => animations.forEach((animation) => animation.cancel()));
-      jellyAnimations.clear();
+      pillAnimation?.complete();
     }
     setupScroll();
   });
 }
+
+// Autonomous ribbon, with no separate pause button. Focus/hover/tap can stop it.
+const ribbon = document.querySelector(".event-ribbon");
+let ribbonPaused = false;
+ribbon.tabIndex = 0;
+ribbon.setAttribute("aria-description", "El movimiento se detiene al enfocar o pasar el cursor. Pulsa Espacio o toca para detenerlo o reanudarlo.");
+function toggleRibbon() { ribbonPaused = !ribbonPaused; ribbon.classList.toggle("ribbon-stopped", ribbonPaused); }
+ribbon.addEventListener("click", toggleRibbon);
+ribbon.addEventListener("keydown", e => { if (e.code === "Space" || e.code === "Enter") { e.preventDefault(); toggleRibbon(); } });
+new IntersectionObserver(([entry]) => ribbon.classList.toggle("ribbon-offscreen", !entry.isIntersecting)).observe(ribbon);
+document.addEventListener("visibilitychange", () => ribbon.classList.toggle("ribbon-hidden", document.hidden));

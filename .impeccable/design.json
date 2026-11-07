@@ -49,16 +49,16 @@
     ],
     "campaign": {
       "source": "src/expressive.css",
-      "hero": "Original artwork, additional static grain, local text halo; no blanket scrim. Connected date route. White centered introduction inside hero.",
-      "menu": "Paper event index, numbered links, pill toggle.",
+      "hero": "Seven-color Grainient shader with photographic stop spacing, fixed grain, original image fallback; no blanket scrim.",
+      "menu": "Right staggered drawer, lilac/violet prelayers, paper index, real section links and social links.",
       "controls": "Light liquid glass ticket capsule; bright green WhatsApp; pill filters.",
-      "motion": "One-shot route draw and reveals; ribbon follows user scrolling, has no autoplay or pause button, and is static under reduced motion."
+      "motion": "32s autonomous ribbon, no scroll binding, pauses on hover/focus/tap and offscreen. Reduced motion is static."
     },
     "motionRevision": {
       "source": "src/motion-effects.js",
       "hero": "75ms stagger, 650ms entrance",
       "statement": "Scroll-linked line fill; all text always present",
-      "faq": "Decorative jelly fill and radio marker, aria-pressed buttons retained",
+      "faq": "Joined plain pills; shared glide indicator, spring bounce .16, no intro, aria-pressed filters.",
       "loading": "Real image loading, 600ms wipe, timeout/error retry, text always available",
       "shadows": "None; latest user request overrides earlier shadow examples"
     }

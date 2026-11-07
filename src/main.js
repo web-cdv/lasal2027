@@ -7,8 +7,9 @@ import "./live.css";
 import "./styles.css";
 import "./expressive.css";
 import "./motion-effects.css";
-import { initMotionEffects, jellyFilter } from "./motion-effects.js";
-import { animate, inView } from "motion";
+import "./layout-refinement.css";
+import { initMotionEffects, moveFaqPill } from "./motion-effects.js";
+import { animate, inView, stagger } from "motion";
 const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 const reduced = motionPreference.matches;
 // Content is present from first paint; entrance is decorative and never blocks input.
@@ -40,13 +41,30 @@ initMotionEffects(motionPreference);
 const dialog = document.querySelector(".lasal-nav-dialog"),
   toggle = document.querySelector(".lasal-nav-toggle");
 let destinationFocus = null;
-const closeMenu = () => dialog.close();
+let menuAnimations = [], menuClosing = false;
+const menuPanel = dialog.querySelector(".lasal-nav-panel");
+const menuLayers = [...dialog.querySelectorAll(".menu-prelayers > div")];
+function cancelMenuAnimations() { menuAnimations.forEach(a => a.cancel()); menuAnimations = []; }
+const closeMenu = () => {
+  if (!dialog.open || menuClosing) return;
+  menuClosing = true;
+  cancelMenuAnimations();
+  if (motionPreference.matches) { dialog.close(); return; }
+  const exit = animate([menuPanel, ...menuLayers.slice().reverse()], { x: ["0%", "100%"] }, { duration: .25, delay: stagger(.035), ease: [.4, 0, 1, 1] });
+  menuAnimations.push(exit);
+  exit.finished.then(() => { if (dialog.open) dialog.close(); });
+};
+dialog.addEventListener("cancel", e => { e.preventDefault(); closeMenu(); });
 toggle.addEventListener("click", () => {
   dialog.showModal();
   dialog.classList.add("is-visible");
-  if (!motionPreference.matches) animate(dialog.querySelector(".lasal-nav-links"),
-    { opacity: [0.8, 1], transform: ["translateY(8px)", "translateY(0)"] },
-    { duration: 0.25, ease: [0.22, 1, 0.36, 1] });
+  menuClosing = false;
+  cancelMenuAnimations();
+  if (!motionPreference.matches) {
+    menuAnimations.push(animate([...menuLayers, menuPanel], { x: ["100%", "0%"] }, { duration: .55, delay: stagger(.07), ease: [.22, 1, .36, 1] }));
+    menuAnimations.push(animate(dialog.querySelectorAll(".lasal-nav-link > span:nth-child(2)"), { y: [55, 0], rotate: [7, 0], opacity: [.1, 1] }, { duration: .6, delay: stagger(.065, { startDelay: .18 }), ease: [.22, 1, .36, 1] }));
+    menuAnimations.push(animate(dialog.querySelectorAll(".menu-socials a"), { y: [15, 0], opacity: [0, 1] }, { duration: .35, delay: stagger(.06, { startDelay: .4 }) }));
+  }
   toggle.setAttribute("aria-expanded", "true");
   document.body.classList.add("menu-open");
 });
@@ -61,6 +79,8 @@ dialog.querySelectorAll("a").forEach((a) =>
   }),
 );
 dialog.addEventListener("close", () => {
+  cancelMenuAnimations();
+  menuClosing = false;
   document.body.classList.remove("menu-open");
   toggle.setAttribute("aria-expanded", "false");
   dialog.classList.remove("is-visible");
@@ -113,7 +133,7 @@ filters.forEach((b) =>
     search.value = "";
     filters.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
     filter();
-    jellyFilter(b, filters, motionPreference.matches);
+    moveFaqPill(b, filters, motionPreference.matches);
   }),
 );
 search.addEventListener("input", () => filter());
@@ -170,3 +190,6 @@ if (ga) {
     }),
   );
 }
+
+// Decorative enhancement; the original artwork remains underneath.
+import("./grainient.js").then(({ initGrainient }) => initGrainient(document.querySelector(".hero-surface"))).catch(() => {});

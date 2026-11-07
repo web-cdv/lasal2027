@@ -1,0 +1,68 @@
+/* Shared edges and rules take priority over the embedded Elementor breakpoints. */
+:root { --rule: #878279; --menu-lilac: #B497CF; --menu-violet: #5227FF; --menu-accent: #c80c17; }
+.dark { --rule: #858585; }
+.section .ls-wrap, .section .ar-wrap { padding: 0; margin: 0; width: 100%; }
+.section .ls-row { grid-template-columns: 1fr 2fr; gap: 32px; border-color: var(--rule); }
+.section .ls-cell { padding: 32px 0; border: 0; }
+.section .ls-row--full { grid-template-columns: 1fr; }
+.section .ls-row--full .ls-cell { grid-template-columns: 1fr 2fr; gap: 32px; }
+.section .ls-nota, .schedule-list li, .faq-list details { border-color: var(--rule); }
+.schedule-list li { padding-block: 24px; }
+.section .ar-card { border-color: var(--rule); }
+.faq-section > h2, .faq-section > p, .faq-tools > label, .faq-filters legend, #faq-status { text-align: center; }
+.faq-tools, .faq-list { width: min(100%, 960px); margin-inline: auto; }
+.faq-filters { display: block; }
+.faq-filters legend { width: 100%; }
+.faq-filter-options { width: max-content; max-width: 100%; margin-inline: auto; flex-wrap: nowrap; gap: 0; border: 1px solid #aaa; padding: 4px; border-radius: 999px; background: #242424; position: relative; isolation: isolate; }
+.faq-filters .faq-filter-options button { border: 0; border-radius: 999px; padding: 12px 18px; gap: 0; min-height: 44px; background: transparent; color: white; transition: color .16s; }
+.faq-filter-options .filter-radio, .faq-filter-options .filter-fill { display: none; }
+.faq-filters .faq-filter-options button[aria-pressed="true"] { background: var(--pink); color: var(--ink); }
+.faq-filter-options button:hover:not([aria-pressed="true"]) { background: #ffffff18; }
+.faq-pill-glide { position: absolute; z-index: -1; border-radius: 999px; border: 2px solid var(--pink); pointer-events: none; }
+.ribbon-track { animation: ribbon-flow 32s linear infinite; }
+.event-ribbon:hover .ribbon-track, .event-ribbon:focus-within .ribbon-track,
+.ribbon-stopped .ribbon-track, .ribbon-offscreen .ribbon-track, .ribbon-hidden .ribbon-track { animation-play-state: paused; }
+@keyframes ribbon-flow { to { transform: translateX(-50%); } }
+.lasal-nav-dialog { --drawer-width: min(620px, 48vw); width: 100%; max-width: none; background: transparent; transform: none; opacity: 1; transition: none; }
+.lasal-nav-dialog .lasal-nav-panel { position: relative; width: var(--drawer-width); margin-left: auto; padding: 24px 32px; background: var(--paper); }
+.menu-prelayers { position: absolute; inset: 0 0 0 auto; width: var(--drawer-width); pointer-events: none; }
+.menu-prelayers > div { position: absolute; inset: 0; background: var(--menu-lilac); }
+.menu-prelayers > div:last-child { background: var(--menu-violet); }
+.lasal-nav-dialog .lasal-nav-panel-top { background: #1a1a1a; margin: -24px -32px 0; padding: 20px 32px; }
+.lasal-nav-dialog .lasal-nav-eyebrow { color: white; font-size: 13px; }
+.lasal-nav-dialog .lasal-nav-close { color: white; border-color: white; }
+.lasal-nav-dialog .lasal-nav-close::before, .lasal-nav-dialog .lasal-nav-close::after { background: white; }
+.lasal-nav-dialog .lasal-nav-link { min-height: 64px; padding-block: 12px; border: 0; grid-template-columns: 28px minmax(0,1fr) 20px; gap: 12px; font-size: clamp(22px, 2.7vw, 42px); font-weight: 600; letter-spacing: -.04em; overflow: hidden; }
+.lasal-nav-dialog .lasal-nav-link:hover { color: var(--menu-accent); padding-left: 0; }
+.lasal-nav-dialog .lasal-nav-number { color: var(--menu-accent); font-size: 12px; letter-spacing: 0; }
+.lasal-nav-dialog .lasal-nav-arrow { font-size: 18px; }
+.lasal-nav-dialog .lasal-nav-links { margin-block: 24px; }
+.menu-socials { flex-shrink: 0; margin-bottom: 24px; }
+.menu-socials p { color: var(--menu-accent); font-size: 13px; margin-bottom: 8px; }
+.menu-socials > div { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.menu-socials a { font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; text-decoration: none; }
+.menu-socials a:hover { color: var(--menu-accent); text-decoration: underline; }
+@media (max-width: 767px) {
+  .lasal-nav-dialog { --drawer-width: 100%; }
+  .lasal-nav-dialog .lasal-nav-panel { padding-inline: 20px; }
+  .lasal-nav-dialog .lasal-nav-panel-top { margin-inline: -20px; padding-inline: 20px; }
+}
+@media (max-width: 640px) {
+  .section .ls-row, .section .ls-row--full .ls-cell { grid-template-columns: 1fr; gap: 0; }
+  .section .ls-cell { padding-block: 24px; }
+  .section .ls-content { padding-top: 0; }
+  .faq-filters .faq-filter-options button { padding: 12px 6px; font-size: 12px; }
+}
+@media (max-height: 500px) { .menu-socials { margin-bottom: 4px; } .menu-socials p, .lasal-nav-dialog .lasal-nav-note { display: none; } .lasal-nav-dialog .lasal-nav-links { margin-block: 12px; } }
+@media (prefers-reduced-motion: reduce) { .ribbon-track { animation: none !important; transform: none !important; } }
+/* One shared pill glides beneath plain labels. */
+.faq-filters .faq-filter-options button { isolation: auto; }
+.faq-filters .faq-filter-options button[aria-pressed="true"],
+.faq-filters .faq-filter-options button:hover:not([aria-pressed="true"]) { background: transparent; }
+.faq-filter-options button > span:last-child { position: relative; color: white; }
+.faq-filter-options button[aria-pressed="true"] > span:last-child { text-decoration: underline; text-underline-offset: .3em; }
+.faq-pill-glide { background: var(--paper); border: 0; }
+.faq-filter-options .pill-highlighted > span:last-child { color: var(--ink); }
+
+.hero-grainient { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
+.hero-grainient:not([data-ready]) { visibility: hidden; }

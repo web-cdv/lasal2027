@@ -50,3 +50,10 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Artefacto autónomo regenerado, acción de prueba operativa sin errores JS.
 - Efectos adaptados con Motion JavaScript a partir de la descripción y adjuntos: las tres URLs externas respondieron 403 y no se afirma equivalencia visual exacta.
 - Último ajuste del cintillo: 14 pruebas aprobadas con comprobación de desplazamiento ligado al scroll, ausencia de bucle automático y estado estático con movimiento reducido.
+
+## Grainient, menú escalonado y PillNav — revisión actual
+
+- Build y 14 pruebas aprobadas, incluido escaneo axe, teclado, filtros, movimiento reducido y cintillo autónomo.
+- Grainient WebGL2 comprobado en Chromium con SwiftShader: canvas listo a 1440px y 390px, sin errores JavaScript ni overflow móvil; pérdida de contexto oculta el canvas y conserva el fondo original.
+- Revisión visual de hero, menú y FAQ a 320/390/1440px. En móvil, título y regla de Tendremos empiezan ambos a 20px.
+- Adaptación del código de React Bits con licencia incluida en public/react-bits-license.txt. Safari/Firefox y GPU de dispositivos físicos pendientes de verificación.
