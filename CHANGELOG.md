@@ -143,3 +143,10 @@ This log records implementation and local verification. Hosting/domain cutover h
 - 16 pruebas aprobadas incluyendo altura constante por categoría y búsqueda sin resultados en móvil/escritorio.
 
 - Áreas: superficie blanca opaca más clara que el papel jaspeado. Spotlight circular lavanda .20 para distinguir el movimiento sobre blanco, radio240, suavidad.7 y flare; sin luz ambiental, bordes ni sombras.
+
+## 2026-11-07 — Apertura de marca con logo y grano
+
+- Loading breve a pantalla completa: logo original, textura de grano estática, manchas azul/coral/rosa y luz que sigue al cursor con requestAnimationFrame.
+- Se retira al resolver fuentes e imagen del hero (mínimo450ms), o por límite1800ms más salida420ms. Sin porcentaje artificial ni esperas para contenido secundario.
+- Botón Entrar, Escape y foco de teclado fuera del loading permiten omitirlo. No bloquea scroll/puntero ni oculta el contenido semántico. Sin JS permanece oculto; con movimiento reducido se omite.
+- Probados carga detenida, omisión/foco al contenido, no-JS, movimiento reducido, teclado y axe. Captura revisada en escritorio.

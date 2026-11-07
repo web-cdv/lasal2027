@@ -8,22 +8,14 @@ import "./styles.css";
 import "./expressive.css";
 import "./motion-effects.css";
 import "./layout-refinement.css";
+import "./loading.css";
+import { initLoading } from "./loading.js";
 import { initMotionEffects, moveFaqPill } from "./motion-effects.js";
 import { animate, inView, stagger } from "motion";
 const motionPreference = matchMedia("(prefers-reduced-motion: reduce)");
 const reduced = motionPreference.matches;
 // Content is present from first paint; entrance is decorative and never blocks input.
 if (!reduced) {
-  animate(
-    ".arrival-line",
-    { scaleX: [0, 1], opacity: [1, 0] },
-    { duration: 1 },
-  );
-  animate(
-    ".arrival",
-    { opacity: [1, 0] },
-    { duration: 0.3, delay: 1 },
-  ).finished.then(() => document.querySelector(".arrival")?.remove());
   inView(
     ".section > h2, .ls-live__intro > header, .ls-row, .ar-card, .ls-live__day",
     (e) => {
@@ -36,7 +28,8 @@ if (!reduced) {
     },
     { amount: 0.3 },
   );
-} else document.querySelector(".arrival")?.remove();
+}
+initLoading(motionPreference);
 initMotionEffects(motionPreference);
 const dialog = document.querySelector(".lasal-nav-dialog"),
   toggle = document.querySelector(".lasal-nav-toggle");

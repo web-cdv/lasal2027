@@ -95,3 +95,10 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Recuperados iconos SVG de información, ticket, avión y ayuda. Acordeón nativo details/summary con chevron rotativo y animación medida de 320ms; movimiento reducido sin animación, sin max-height que recorte respuestas.
 - Propuesta Tendremos aprobada y aplicada: tres formatos en la columna izquierda, Mesas en la derecha con título junto al24, descripción y notas. Una columna bajo900px. Separadores estructurales y superficies planas preservados.
 - 16 pruebas aprobadas incluyendo altura constante por categoría y búsqueda sin resultados en móvil/escritorio.
+
+## 2026-11-07 — Apertura de marca con logo y grano
+
+- Loading breve a pantalla completa: logo original, textura de grano estática, manchas azul/coral/rosa y luz que sigue al cursor con requestAnimationFrame.
+- Se retira al resolver fuentes e imagen del hero (mínimo450ms), o por límite1800ms más salida420ms. Sin porcentaje artificial ni esperas para contenido secundario.
+- Botón Entrar, Escape y foco de teclado fuera del loading permiten omitirlo. No bloquea scroll/puntero ni oculta el contenido semántico. Sin JS permanece oculto; con movimiento reducido se omite.
+- Probados carga detenida, omisión/foco al contenido, no-JS, movimiento reducido, teclado y axe. Captura revisada en escritorio.

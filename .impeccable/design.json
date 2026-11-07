@@ -61,7 +61,7 @@
       "hero": "75ms stagger, 650ms entrance",
       "statement": "Opacity-only word scrub .15 to 1, no blur/rotation/offset; balanced natural lines at 42ch; reduced motion fully visible.",
       "faq": "Joined plain pills; shared glide indicator, spring bounce .16, no intro, aria-pressed filters.",
-      "loading": "Real image loading, 600ms wipe, timeout/error retry, text always available",
+      "loading": "Logo arrival with static grain and pointer light, real hero/font readiness, 450ms minimum and 1800ms deadline +420ms exit. Skip/Escape/focus dismissal. No JS hidden; reduced motion skipped.",
       "shadows": "None; latest user request overrides earlier shadow examples"
     }
   },

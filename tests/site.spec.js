@@ -242,3 +242,16 @@ test('FAQ section keeps its height across categories and empty search', async ({
   await page.getByRole('button',{name:'Borrar búsqueda'}).click();
  }
 });
+
+
+test('brand loading can be skipped and times out when hero is stalled', async({page})=>{
+ await page.route(/banner.*\.webp/,()=>{});
+ await page.goto('/',{waitUntil:'domcontentloaded'});
+ await expect(page.locator('.arrival')).toBeVisible();
+ await page.getByRole('button',{name:'Entrar a la web'}).click();
+ await expect(page.locator('.arrival')).toHaveCount(0);
+ await expect(page.locator('#contenido')).toBeFocused();
+ await page.reload({waitUntil:'domcontentloaded'});
+ await expect(page.locator('.arrival')).toBeVisible();
+ await expect(page.locator('.arrival')).toHaveCount(0,{timeout:3000});
+});
