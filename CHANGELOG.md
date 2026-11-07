@@ -114,3 +114,7 @@ This log records implementation and local verification. Hosting/domain cutover h
 
 - Áreas: vidrio esmerilado lavanda grisáceo translúcido, texto oscuro, sin borde/sombra. Spotlight circular blanco .15, 240px, suavidad .7, proximidad80, smoothing .3, flare activo, ambient desactivado. Validación: opacidad en reposo0 y hover .1496, responsive y axe aprobados.
 - Restaurado Grainient del commit 33d8f7f por aclaración del usuario: la referencia era sólo para la composición de fechas. Se mantienen fechas compactas/inclinadas y mayo en minúscula; no se aplican el nuevo grano ni la nueva paleta del póster.
+
+- Texto de propósito: revelado sólo por opacidad, sin blur; ancho de lectura 42ch, líneas naturales equilibradas, alineación izquierda y alturas de línea consistentes en móvil/escritorio.
+
+- Fila práctica del hero recolocada más abajo: 128px de separación en escritorio, 72px en móvil; conserva el color oscuro.

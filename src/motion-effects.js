@@ -142,7 +142,7 @@ export function initMotionEffects(preference) {
     words.forEach(word => { word.style.removeProperty("opacity"); word.style.removeProperty("filter"); });
 
     if (preference.matches) return;
-    const animation = animate(words, { opacity: [.15, 1], filter: ["blur(4px)", "blur(0px)"] }, { duration: .8, delay: stagger(.2), ease: "linear" });
+    const animation = animate(words, { opacity: [.15, 1] }, { duration: .8, delay: stagger(.2), ease: "linear" });
     const detach = scroll(animation, { target: document.querySelector("#statement-title"), offset: ["start 85%", "end 40%"] });
     scrollStops.push(() => { detach(); animation.cancel(); });
   }

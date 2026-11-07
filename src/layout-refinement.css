@@ -189,3 +189,11 @@ body #areas .ar-card, body #areas .ar-card:hover {
 @supports not (backdrop-filter:blur(1px)) {
  body #areas .ar-card, body #areas .ar-card:hover { background: #e1deea; }
 }
+
+/* Readable mission copy: natural balanced lines, opacity-only reveal. */
+body .scroll-statement #statement-title { max-width: 42ch; font-size: clamp(24px,2.6vw,38px); line-height: 1.5; letter-spacing: -.025em; text-align: left; text-wrap: balance; }
+body .scroll-statement #statement-title .scroll-line { display: inline; margin: 0; }
+body .scroll-statement .reveal-word { filter: none; vertical-align: baseline; }
+/* Restore the lower placement of practical hero details, retaining dark ink. */
+body #is-hero .is-hero__footer { margin-top: 128px; }
+@media(max-width:640px) { body #is-hero .is-hero__footer { margin-top: 72px; } }
