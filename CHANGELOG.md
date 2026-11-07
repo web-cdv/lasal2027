@@ -120,3 +120,10 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Fila práctica del hero recolocada más abajo: 128px de separación en escritorio, 72px en móvil; conserva el color oscuro.
 
 - Cintillo en bucle continuo con dos copias de al menos un viewport cada una, evitando huecos en pantallas amplias y conservando el reinicio a -50%.
+
+## 2026-11-07 — Buscador FAQ inspirado en Prompt Bar
+
+- Barra única gris carbón, radio16px, lupa vectorial, campo16px y botón circular para borrar. Sin bordes decorativos, sombras ni controles ajenos a buscar preguntas.
+- Conserva etiqueta accesible, resultados anunciados, búsqueda por tildes/categorías y foco de teclado. Borrar devuelve el foco al input; control mínimo44px.
+- Revisión integrada: cintillo con copias de al menos100vw, revelado del propósito sin blur, líneas equilibradas y fila práctica del hero bajada manteniendo texto oscuro.
+- Propuesta HTML alternativa de Tendremos permanece sin aplicar.

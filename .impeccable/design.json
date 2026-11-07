@@ -52,7 +52,8 @@
       "hero": "Opaque standalone Grainient; eight sampled colors, curved horizon and procedural grain. Original image is fallback only. No superposition.",
       "menu": "Right staggered drawer, lilac/violet prelayers, paper index, real section links and social links.",
       "controls": "Borderless surfaces, dark spotlight area cards; retain keyboard focus outlines.",
-      "motion": "32s autonomous ribbon, no scroll binding, pauses on hover/focus/tap and offscreen. Reduced motion is static."
+      "motion": "32s autonomous ribbon, no scroll binding, pauses on hover/focus/tap and offscreen. Reduced motion is static.",
+      "search": "Prompt Bar-inspired single charcoal surface, 16px radius, search icon, labelled native input, 44px clear button; no decorative border/shadow."
     },
     "motionRevision": {
       "source": "src/motion-effects.js",

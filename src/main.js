@@ -110,6 +110,7 @@ const norm = (s) =>
     .toLowerCase()
     .trim();
 function filter(announce = true) {
+  document.querySelector(".faq-prompt__clear").hidden = !search.value;
   const term = norm(search.value);
   let count = 0;
   for (const el of items) {
@@ -137,6 +138,7 @@ filters.forEach((b) =>
   }),
 );
 search.addEventListener("input", () => filter());
+document.querySelector('.faq-prompt__clear').addEventListener('click',()=>{search.value='';filter();search.focus();});
 filter(false);
 const actions = document.querySelector(".floating-actions");
 new ResizeObserver(() => {

@@ -42,6 +42,9 @@ test("keyboard menu, FAQ search, no-match recovery", async ({ page }) => {
   await q.focus();
   await page.keyboard.press("Enter");
   await expect(page.locator(".faq-list details[open]")).toHaveCount(1);
+  await page.getByRole("button",{name:"Borrar búsqueda"}).click();
+  await expect(page.locator("#faq-search")).toBeFocused();
+  await expect(page.locator("#faq-search")).toHaveValue("");
   await page.locator("#faq-search").fill("zzzzzz");
   await expect(page.locator("#faq-status")).toContainText("No encontramos");
   await page.getByRole("button", { name: "Registro", exact: true }).click();

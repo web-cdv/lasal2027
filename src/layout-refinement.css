@@ -203,3 +203,15 @@ body .ribbon-copy { box-sizing: border-box; min-width: 100vw; justify-content: s
 @media(prefers-reduced-motion:reduce) { body .ribbon-track { animation: none !important; } }
 body .event-ribbon:hover .ribbon-track, body .event-ribbon:focus-within .ribbon-track,
 body .ribbon-stopped .ribbon-track, body .ribbon-offscreen .ribbon-track, body .ribbon-hidden .ribbon-track { animation-play-state: paused; }
+
+/* Prompt Bar-inspired search: a single quiet surface and real search controls. */
+body .faq-prompt { display: flex; align-items: center; gap: 12px; padding: 8px 12px 8px 20px; width: min(100%,640px); margin: 0 auto 28px; min-height: 64px; background: #27272a; border-radius: 16px; color: #f5f5f5; }
+body .faq-prompt__icon { width: 22px; height: 22px; flex-shrink: 0; color: #c6c6ca; }
+body .faq-tools .faq-prompt input { min-width: 0; flex: 1; width: 100%; padding: 10px 0; margin: 0; min-height: 44px; background: transparent; color: #f5f5f5; border-radius: 0; font: inherit; font-size: 16px; line-height: 1.5; outline: none; }
+body .faq-tools .faq-prompt input::placeholder { color: #bfc0c6; }
+body .faq-prompt input::-webkit-search-cancel-button { display: none; }
+body .faq-prompt:focus-within { outline: 2px solid #ff91a4; outline-offset: 4px; }
+body .faq-prompt__clear { display: grid; place-items: center; flex-shrink: 0; width: 44px; height: 44px; padding: 10px; background: #3b3b40; border-radius: 50%; color: #fff; cursor: pointer; }
+body .faq-prompt__clear[hidden] { display: none; }
+body .faq-prompt__clear svg { width: 22px; height: 22px; }
+body .faq-prompt__clear:hover { background: #4b4b52; }

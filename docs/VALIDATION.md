@@ -74,3 +74,10 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Tendremos plano sin hover iluminado; restauradas líneas estructurales en actividades, programa, Live y FAQ.
 - Verificados 320/390/768/1440/1920px sin overflow; un único h1, títulos consistentes. 15 pruebas aprobadas, incluido nuevo escaneo axe con menú abierto a 320px.
 - SEO: título/descripción, lang es, encabezados semánticos, imagen social, canonical/sitemap/robots y Event con organizador disponibles al configurar VITE_SITE_URL. Preview continúa noindex para evitar duplicar WordPress. Navegadores físicos y lector de pantalla requieren validación manual adicional.
+
+## 2026-11-07 — Buscador FAQ inspirado en Prompt Bar
+
+- Barra única gris carbón, radio16px, lupa vectorial, campo16px y botón circular para borrar. Sin bordes decorativos, sombras ni controles ajenos a buscar preguntas.
+- Conserva etiqueta accesible, resultados anunciados, búsqueda por tildes/categorías y foco de teclado. Borrar devuelve el foco al input; control mínimo44px.
+- Revisión integrada: cintillo con copias de al menos100vw, revelado del propósito sin blur, líneas equilibradas y fila práctica del hero bajada manteniendo texto oscuro.
+- Propuesta HTML alternativa de Tendremos permanece sin aplicar.

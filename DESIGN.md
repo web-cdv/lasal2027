@@ -241,3 +241,10 @@ El cintillo usa un bucle autónomo, independiente del scroll; consultar la revis
 - Restaurado Grainient del commit 33d8f7f por aclaración del usuario: la referencia era sólo para la composición de fechas. Se mantienen fechas compactas/inclinadas y mayo en minúscula; no se aplican el nuevo grano ni la nueva paleta del póster.
 
 - Texto de propósito: revelado sólo por opacidad, sin blur; ancho de lectura 42ch, líneas naturales equilibradas, alineación izquierda y alturas de línea consistentes en móvil/escritorio.
+
+## 2026-11-07 — Buscador FAQ inspirado en Prompt Bar
+
+- Barra única gris carbón, radio16px, lupa vectorial, campo16px y botón circular para borrar. Sin bordes decorativos, sombras ni controles ajenos a buscar preguntas.
+- Conserva etiqueta accesible, resultados anunciados, búsqueda por tildes/categorías y foco de teclado. Borrar devuelve el foco al input; control mínimo44px.
+- Revisión integrada: cintillo con copias de al menos100vw, revelado del propósito sin blur, líneas equilibradas y fila práctica del hero bajada manteniendo texto oscuro.
+- Propuesta HTML alternativa de Tendremos permanece sin aplicar.
