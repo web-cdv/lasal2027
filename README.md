@@ -1,6 +1,6 @@
 # La Sal 2027
 
-Independent Spanish-language conference homepage using HTML, CSS, JavaScript, Vite, and Motion. No React or WordPress runtime is required. The current WordPress site remains active; this work has not been deployed.
+Independent Spanish-language conference homepage using HTML, CSS, JavaScript, Vite, and Motion. No React or WordPress runtime is required. The current WordPress site remains active. A staging preview is deployed at https://web-cdv.github.io/lasal2027/; the production domain has not been switched.
 
 ## Run locally
 

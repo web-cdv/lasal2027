@@ -22,3 +22,5 @@ This log records implementation and local verification. Hosting/domain cutover h
 
 - Added automatic GitHub Pages deployment from `main`, using the static `dist/` build and relative asset paths.
 - Preview keeps staging noindex settings and analytics disabled. Hosting does not modify WordPress or its domain.
+
+- GitHub Pages activation and deployment succeeded through the workflow. Verified HTTP 200 for the homepage and design system, mobile layout, images, FAQ filtering, and no JavaScript errors in the smoke test. Preview: https://web-cdv.github.io/lasal2027/.
