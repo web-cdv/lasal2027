@@ -193,3 +193,26 @@ if (ga) {
 
 // Decorative enhancement; the original artwork remains underneath.
 import("./grainient.js").then(({ initGrainient }) => initGrainient(document.querySelector(".hero-surface"))).catch(() => {});
+
+// SpotlightCard-inspired beam: white .15 intensity, 240px, 80px proximity,
+// .3 smoothing. Border glow omitted to honor the borderless direction.
+const areaCards = [...document.querySelectorAll('.ar-card')];
+let spotFrame;
+let spotPointer;
+function updateSpotlights() {
+  spotFrame = null;
+  for (const card of areaCards) {
+    const r = card.getBoundingClientRect();
+    const x = spotPointer.x-r.left, y = spotPointer.y-r.top;
+    const distance = Math.hypot(Math.max(-x,0,x-r.width), Math.max(-y,0,y-r.height));
+    const current = card._spot || {x:r.width/2,y:0};
+    current.x += (x-current.x)*.3; current.y += (y-current.y)*.3; card._spot=current;
+    card.style.setProperty('--spot-x',current.x+'px'); card.style.setProperty('--spot-y',current.y+'px');
+    card.style.setProperty('--spot-opacity',Math.max(.3,1-distance/80));
+  }
+  if (areaCards.some(card=>Math.abs(card._spot.x-(spotPointer.x-card.getBoundingClientRect().left))>1)) spotFrame=requestAnimationFrame(updateSpotlights);
+}
+window.addEventListener('pointermove',event=>{
+  if(motionPreference.matches || event.pointerType==='touch') return;
+  spotPointer={x:event.clientX,y:event.clientY}; if(!spotFrame) spotFrame=requestAnimationFrame(updateSpotlights);
+},{passive:true});

@@ -77,3 +77,11 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Imagen original como base visible, encuadrada al 100% × 140% desde arriba para conservar azul, horizonte verde/ámbar y rosa inferior.
 - Grainient mezcla soft-light al 32%: ocho muestras del arte original, lavanda/azul/celeste/verde/ámbar/coral/rosa/crema. Movimiento más lento (.35), menor seda (.12), grano .13 y tamaño 1.6. Textura adicional al 46%; se preservan las fibras originales.
 - Build y 14 pruebas aprobadas. Capturas desktop/móvil y contorno computado de 0px comprobados.
+
+## 2026-11-07 — Grainient autónomo y superficies sin bordes
+
+- Grainient opaco, sin mezcla con la imagen: paleta de ocho muestras y horizonte curvo verde/ámbar sobre coral y rosa. La imagen sólo sirve de fallback sin WebGL; se retira la textura SVG superpuesta.
+- Eliminados bordes decorativos; se mantienen indicadores de foco del teclado y la ruta SVG de fechas.
+- La Sal Live utiliza los mismos tokens de padding que las secciones. Verificado a 390px: 20px en ambos, sin overflow.
+- Áreas oscuras con haz blanco de intensidad .15, tamaño 240px, proximidad 80px, suavizado .3 y ambiente tenue, adaptado a JavaScript de la referencia SpotlightCard. Sin borderGlow por la petición de quitar bordes. Sin grano en tarjetas; movimiento reducido y táctil mantienen ambiente estático.
+- Propósito editorial con bandas Creatividad / Comunidad / Visión, logo y movimiento suave. Cintillo amarillo lima, texto de mayor peso y logos en lugar de asteriscos, conservando dimensiones y fechas.

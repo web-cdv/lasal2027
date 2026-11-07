@@ -49,9 +49,9 @@
     ],
     "campaign": {
       "source": "src/expressive.css",
-      "hero": "Original artwork retained as the visible base, eight sampled colors in a soft-light Grainient layer at 32%, slower movement, stronger grain; white text without strokes or shadows.",
+      "hero": "Opaque standalone Grainient; eight sampled colors, curved horizon and procedural grain. Original image is fallback only. No superposition.",
       "menu": "Right staggered drawer, lilac/violet prelayers, paper index, real section links and social links.",
-      "controls": "Light liquid glass ticket capsule; bright green WhatsApp; pill filters.",
+      "controls": "Borderless surfaces, dark spotlight area cards; retain keyboard focus outlines.",
       "motion": "32s autonomous ribbon, no scroll binding, pauses on hover/focus/tap and offscreen. Reduced motion is static."
     },
     "motionRevision": {

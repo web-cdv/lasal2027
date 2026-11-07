@@ -88,7 +88,9 @@ vec2 warp(vec2 p) {
 
 float coord(vec2 p) {
   vec2 w = warp(p);
-  return uType == 1 ? 1.0 - length(w) * 1.1 : dot(w, uDir) / uExtent + 0.5;
+  // Broad photographic horizon: a raised green/amber seam, not equal diagonal stripes.
+  float horizon = 0.065 * sin((vUv.x + 0.08) * 4.2) + 0.035 * (vUv.x - 0.5);
+  return uType == 1 ? 1.0 - length(w) * 1.1 : dot(w, uDir) / uExtent + 0.5 + horizon;
 }
 
 vec3 labToRgb(vec3 lab) {
@@ -265,7 +267,7 @@ export function initGrainient(container) {
   container.prepend(canvas);
   const settings = {
     colors: ['#696EA4', '#0E37D0', '#619FDE', '#073E0B', '#C67A0E', '#D8505A', '#CF5288', '#E8D6CA'],
-    type: 0, angle: 190, bands: 1, speed: 0.35, flow: 0.45, scale: 0.65,
+    type: 0, angle: 180, bands: 1, speed: 0.35, flow: 0.5, scale: 0.5,
     softness: 1, silk: 0.12, grainAmount: 0.13, grainSize: 1.6,
     grainAnimated: false, contrast: 1.01, saturation: 1, variation: 11,
     interactive: true, stir: 0.9, clickSwirl: false, intro: false, lightMode: false, dpr: 1
