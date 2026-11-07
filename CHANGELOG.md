@@ -39,4 +39,6 @@ This log records implementation and local verification. Hosting/domain cutover h
 
 - Detectado Pages en modo `legacy` publicando la raíz de main además del workflow Vite.
   La publicación de código fuente podía sobrescribir `dist/` después de una comprobación correcta.
-- El workflow configura Pages en modo `workflow` antes de desplegar, evitando las dos fuentes competidoras.
+- El workflow exige Pages en modo `workflow` antes de desplegar y verifica los recursos públicos después. El cambio de Source requiere al administrador: la credencial disponible responde 403 al intentar modificarlo.
+- El administrador seleccionó GitHub Actions y la API confirmó `build_type: workflow`.
+- Nueva comprobación post-despliegue: rechaza HTML fuente y exige respuestas válidas de CSS, JS, imágenes y fuentes. Probada contra el build local; detecta correctamente la página sin compilar.

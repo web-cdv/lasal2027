@@ -32,12 +32,13 @@ jobs:
         env:
           VITE_SITE_URL: ''
           VITE_GA_ID: ''
-      - name: Use Actions as the only Pages publishing source
+      - name: Verify Actions is the only Pages publishing source
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type)" != "workflow" ]; then
-            gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow
+            echo "::error::Select GitHub Actions in repository Settings > Pages > Source. Branch publishing overwrites the compiled website."
+            exit 1
           fi
       - uses: actions/configure-pages@v5
         with:
@@ -48,3 +49,5 @@ jobs:
       - name: Deploy preview
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify published styles, scripts and images
+        run: node scripts/check-deployed.mjs "${{ steps.deployment.outputs.page_url }}"
