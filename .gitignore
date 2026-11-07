@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.impeccable/*
+!.impeccable/design.json
+test-results/
+playwright-report/
+.agents/skills/impeccable/scripts/bin/

@@ -1,0 +1,139 @@
+.ds-page {
+  background: var(--paper);
+}
+.ds-header {
+  padding: 24px var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  background: var(--dark);
+  color: white;
+}
+.ds-header nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.ds-header a {
+  padding-block: 8px;
+}
+.ds-intro h1 {
+  font-size: clamp(40px, 7vw, 90px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  max-width: 15ch;
+}
+.ds-intro p {
+  max-width: 70ch;
+}
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+.swatch {
+  padding: 0;
+  border: 1px solid #878279;
+  overflow: hidden;
+  text-align: left;
+  background: transparent;
+}
+.swatch span,
+.swatch strong {
+  display: block;
+  padding: 4px 16px;
+}
+.swatch .color-sample {
+  height: 100px;
+  padding: 0;
+  margin-bottom: 12px;
+}
+.swatch span:last-child {
+  padding-bottom: 16px;
+}
+.swatch:hover {
+  background: #e4dfd5;
+}
+.type-display {
+  font-size: clamp(32px, 5vw, 72px);
+  line-height: 1.1;
+}
+.type-heading {
+  font-size: 24px;
+  font-weight: 600;
+}
+.type-body {
+  max-width: 65ch;
+}
+.ds-specs {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  line-height: 1.7;
+}
+.ds-specs dd {
+  margin: 0;
+}
+.ds-component {
+  padding-block: 32px;
+  border-top: 1px solid #878279;
+}
+.ds-component p {
+  max-width: 70ch;
+}
+.ds-component summary {
+  padding-block: 18px;
+}
+.ds-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.ds-actions button:hover {
+  background: #87827930;
+}
+.ds-actions button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.ds-surfaces {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.surface-sample {
+  padding: 32px 24px;
+  line-height: 1.8;
+}
+.live-sample {
+  background:
+    linear-gradient(135deg, #e5def2e6, #f3dae8e0, #f6eedeea),
+    url("./assets/banner.webp") center/cover;
+  color: #242136;
+}
+.ds-media {
+  max-width: 540px;
+}
+.reduce-demo::after {
+  animation: none !important;
+  transform: none !important;
+}
+.ds-footer {
+  padding: 40px var(--gutter);
+  background: var(--dark);
+  color: white;
+  line-height: 1.8;
+}
+@media (max-width: 640px) {
+  .ds-specs,
+  .ds-surfaces {
+    grid-template-columns: 1fr;
+  }
+  .ds-header nav {
+    gap: 12px;
+  }
+}

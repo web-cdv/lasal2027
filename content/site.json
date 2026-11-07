@@ -1,0 +1,145 @@
+{
+  "title": "La Sal 2027 — Imagen & Semejanza",
+  "description": "Conferencia creativa y de liderazgo de caminodevida. Del 26 al 28 de mayo de 2027 en Lima, Perú. La Sal Live: 29 y 30 de mayo.",
+  "intro": "La Sal – conferencia creativa y de liderazgo de caminodevida diseñada para ayudar y animar a pastores y a sus equipos creativos a avanzar con la visión que Dios ha dado a sus iglesias. Del 26 al 28 de mayo del 2027 + quédate a La Sal Live, 29 y 30 de mayo.",
+  "program": "Aquí te presentamos el programa de la conferencia. Además, te invitamos a quedarte para La Sal Live, el Sábado 29 y Domingo 30 mayo donde te mostraremos el detrás de escenas de cada equipo que hace funcionar la iglesia (ministerios juveniles y servicios dominicales).",
+  "schedule": [
+    "Miércoles 26 — 6 p. m. a 8 p. m.",
+    "Jueves 27 — 10 a. m. a 8 p. m.",
+    "Viernes 28 — 10 a. m. a 7 p. m."
+  ],
+  "ticketUrl": "https://www.eventbrite.com.pe/e/registro-conferencia-la-sal-2027-2002826896161",
+  "price": "$55",
+  "areas": [
+    {
+      "name": "Alabanzas",
+      "description": "Este equipo guía a las personas a vivir una experiencia con Dios a través de la alabanza para que puedan experimentar el poder ilimitado de Dios en sus vidas y se conviertan en un reflejo de Su grandeza."
+    },
+    {
+      "name": "Artes escénicas",
+      "description": "A través de la danza, la actuación y otras formas de arte, apoyan la visión de la casa en eventos o domingos especiales para sumar a lo que se desee comunicar con creatividad y excelencia."
+    },
+    {
+      "name": "Comunicaciones",
+      "description": "Encargado de todo lo que se comunica de manera digital o impresa con el fin de conectar a las personas con lo que está sucediendo en la iglesia. A través del diseño, redes sociales, fotografía, video, web y atmósfera nos aseguramos de que el mensaje llegue claro, auténtico y con propósito."
+    },
+    {
+      "name": "Producción",
+      "description": "Son los equipos que trabajan detrás de escenas para lograr que cada evento o servicio se logre con excelencia y relevancia; con transiciones limpias y bien ensayadas que involucran la coordinación técnica de áreas como sonido, luces, visuales, cámaras y producción preparando la atmósfera para que el mensaje pueda brillar."
+    },
+    {
+      "name": "Liderazgo",
+      "description": "El liderazgo no se trata de una posición, sino de servicio. Este equipo se enfoca en guiar con visión desde la perspectiva de Dios y hacer que otros puedan florecer donde Dios los ha puesto."
+    }
+  ],
+  "categories": [
+    {
+      "id": "general",
+      "label": "General"
+    },
+    {
+      "id": "registro",
+      "label": "Registro"
+    },
+    {
+      "id": "extranjero",
+      "label": "Extranjero"
+    },
+    {
+      "id": "otros",
+      "label": "Otros"
+    }
+  ],
+  "faq": [
+    {
+      "category": "general",
+      "question": "¿Cuándo y dónde es Conferencia La Sal?",
+      "answer": "<p>Del 26 al 28 de mayo de 2027, en caminodevida, calle Buen Retiro 100, Monterrico, Surco, Lima, Perú. La Sal Live será el 29 y 30 de mayo.</p>",
+      "keywords": "ubicacion direccion sitio mapa surco monterrico"
+    },
+    {
+      "category": "general",
+      "question": "¿Qué incluye mi entrada?",
+      "answer": "\n<p>Al comprar tu entrada aseguras tu asiento, lo cual te da acceso a la experiencia total de los 3 días. Además, te invitamos a quedarte el sábado y el domingo para La Sal Live, donde verás el detrás de escena de nuestros servicios juveniles y del domingo. Recibirás un pack de participante y sorpresas especiales.</p>\n",
+      "keywords": "costo precio valor beneficio regalo pack"
+    },
+    {
+      "category": "general",
+      "question": "¿Para quiénes es la Conferencia?",
+      "answer": "\n<p>Dirigida a pastores y equipos creativos. Queremos compartir experiencias de \"prueba y error\" para ayudarte a impulsar la visión de tu iglesia.</p>\n",
+      "keywords": "publico gente personas lideres"
+    },
+    {
+      "category": "general",
+      "question": "¿Habrá acceso a las prédicas después?",
+      "answer": "\n<p>Sí, terminando la conferencia subiremos el contenido al YouTube de Caminodevida (acceso libre). El único contenido que no será grabado es el de las Mesas.</p>\n",
+      "keywords": "video youtube grabacion online en vivo"
+    },
+    {
+      "category": "general",
+      "question": "¿Se permiten bebés o niños?",
+      "answer": "\n<p>En cdv amamos a los niños, pero en esta conferencia <strong>no está permitido traerlos</strong> ya que no tendremos espacios designados para ellos.</p>\n",
+      "keywords": "bebes hijos familia infantes guarderia cuidado"
+    },
+    {
+      "category": "registro",
+      "question": "¿Puedo transferir mi entrada?",
+      "answer": "\n<p>Sí. Envía el correo de confirmación a la persona que asistirá. El número de entrada será su ingreso.</p>\n",
+      "keywords": "cambiar nombre amigo regalar vender"
+    },
+    {
+      "category": "registro",
+      "question": "Quiero invitar a alguien, ¿cómo compro su entrada?",
+      "answer": "\n<p>Ingresa directamente el correo de tu invitado al comprar para que reciba la info. O usa tu correo y luego reenvíale los detalles.</p>\n",
+      "keywords": "compra grupo amigos inscripcion"
+    },
+    {
+      "category": "registro",
+      "question": "Métodos de pago",
+      "answer": "\n<p>Solo a través de la web con tarjeta débito o crédito (VISA, Mastercard, American Express).</p>\n",
+      "keywords": "dinero plata tarjeta yape plin efectivo dolares soles"
+    },
+    {
+      "category": "registro",
+      "question": "¿Dónde recojo mi entrada física?",
+      "answer": "\n<p>No tendremos entradas impresas. Tu entrada sera el correo de confirmación.</p>\n",
+      "keywords": "papel imprimir fisico boletería"
+    },
+    {
+      "category": "extranjero",
+      "question": "Hospedajes recomendados",
+      "answer": "\n<p>Algunas opciones cercanas:</p>\n<div class=\"hotel-grid\">\n<div class=\"hotel-card\">\n<span class=\"hotel-name\">Golf Los Incas</span>\n<span class=\"hotel-type\">Hotel &amp; Spa</span>\n<div class=\"hotel-info\">Av. Cerros de Camacho #500, Surco</div>\n</div>\n<div class=\"hotel-card\">\n<span class=\"hotel-name\">El Polo Apart Hotel</span>\n<span class=\"hotel-type\">Hotel &amp; Suites</span>\n<div class=\"hotel-info\">Av. La Encalada #1515, Surco</div>\n</div>\n<div class=\"hotel-card\">\n<span class=\"hotel-name\">Las Villas del Sol</span>\n<span class=\"hotel-type\">Bed &amp; Breakfast</span>\n<div class=\"hotel-info\">Los Tulipanes 117, Monterrico</div>\n</div>\n<div class=\"hotel-card\">\n<span class=\"hotel-name\">USEL</span>\n<span class=\"hotel-type\">Hospedaje</span>\n<div class=\"hotel-info\">\nTel: (511) 348-1202<br>\n<a href=\"http://www.usel.edu.pe\" target=\"_blank\" class=\"hotel-link\">www.usel.edu.pe</a>\n</div>\n</div>\n<div class=\"hotel-card\">\n<span class=\"hotel-name\">Villa Jardín</span>\n<span class=\"hotel-type\">Bed &amp; Breakfast</span>\n<div class=\"hotel-info\">Capacidad: 20 personas<br>Cel: 997 584 030</div>\n</div>\n</div>\n<a class=\"btn-airbnb\" href=\"https://www.airbnb.com.pe\" target=\"_blank\">\n<span class=\"material-symbols-rounded\">home_pin</span> Ver opciones en AirBnB\n</a>\n",
+      "keywords": "dormir alojarse quedarse cama habitacion airbnb"
+    },
+    {
+      "category": "extranjero",
+      "question": "Transporte y Taxis",
+      "answer": "\n<p><strong>Apps:</strong> Recomendamos Uber, inDriver y Yango.</p>\n<p><strong>Transporte Público:</strong> Busca en Google Maps \"Buen retiro 100 Monterrico\".</p>\n",
+      "keywords": "carro bus micro uber didi cabify aeropuerto llegar"
+    },
+    {
+      "category": "otros",
+      "question": "Asistencia médica",
+      "answer": "\n<p>Contamos con doctores de la casa para emergencias o para derivar a ambulancia.</p>\n",
+      "keywords": "enfermo salud pastilla ambulancia desmayo"
+    },
+    {
+      "category": "otros",
+      "question": "Seguridad",
+      "answer": "\n<p>Tenemos equipo de seguridad, pero pedimos cuidar tus pertenencias. Es obligatorio portar la pulsera de identificación.</p>\n",
+      "keywords": "robo cuidado mochila cartera pulsera"
+    },
+    {
+      "category": "otros",
+      "question": "Edad límite",
+      "answer": "\n<p>No podrán ingresar niños ni bebés por falta de espacio apropiado para ellos.</p>\n",
+      "keywords": "menores chicos bebes"
+    },
+    {
+      "category": "otros",
+      "question": "¿Preguntas adicionales?",
+      "answer": "\n<p>Escríbenos a <a href=\"mailto:eventos@caminodevida.com\">eventos@caminodevida.com</a></p>\n",
+      "keywords": "contacto email dudas ayuda"
+    }
+  ]
+}

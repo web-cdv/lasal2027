@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>La Sal — Sistema de diseño</title>
+  </head>
+  <body class="ds-page">
+    <a class="skip-link" href="#ds-content">Saltar al contenido</a>
+    <header class="ds-header">
+      <a href="./">La Sal 2027</a>
+      <nav aria-label="Contenido del sistema">
+        <a href="#paleta">Color</a><a href="#tipografia">Tipografía</a
+        ><a href="#componentes">Componentes</a
+        ><a href="#movimiento">Movimiento</a>
+      </nav>
+    </header>
+    <main id="ds-content">
+      <section class="section paper ds-intro">
+        <h1>Sistema de diseño</h1>
+        <p>La Sal · Imagen & Semejanza · 2027</p>
+        <p>
+          Una referencia viva para construir nuevas secciones con la misma
+          identidad: textura de papel, color fotográfico, tipografía
+          monoespaciada y jerarquía editorial.
+        </p>
+        <a href="./">Ver la página</a>
+      </section>
+      <section class="section paper" id="paleta">
+        <h2>Color con propósito</h2>
+        <p>
+          Cada color tiene una función. La textura acompaña; el contraste
+          sostiene la lectura.
+        </p>
+        <div class="swatches" id="swatches"></div>
+        <p id="copy-status" role="status"></p>
+      </section>
+      <section class="section dark" id="tipografia">
+        <h2>IBM Plex Mono</h2>
+        <p class="type-display">Imagen & Semejanza</p>
+        <p class="type-heading">Horarios, lugares y personas.</p>
+        <p class="type-body">
+          La voz visual conserva el carácter de La Sal. Los textos largos se
+          limitan a una medida cómoda de lectura y los horarios utilizan números
+          de ancho uniforme.
+        </p>
+        <dl class="ds-specs">
+          <dt>Títulos de sección</dt>
+          <dd>32–80 px · peso 400 · interlineado 1,1</dd>
+          <dt>Texto</dt>
+          <dd>16 px · peso 400 · interlineado 1,8</dd>
+          <dt>Márgenes laterales</dt>
+          <dd>56 px escritorio · 36 px tablet · 20 px móvil</dd>
+          <dt>Movimiento</dt>
+          <dd>
+            Entradas breves, sin ocultar contenido. Respeta movimiento reducido.
+          </dd>
+        </dl>
+      </section>
+      <section class="section paper" id="componentes">
+        <h2>Componentes</h2>
+        <div class="ds-component">
+          <h3>Acciones</h3>
+          <p>
+            Rojo para la acción principal; contorno para las alternativas. Usa
+            Tab para comprobar el foco.
+          </p>
+          <div class="ds-actions">
+            <a class="button" href="./#programa">Ver programa</a
+            ><button type="button" id="demo-button">Probar acción</button
+            ><button type="button" disabled>No disponible</button>
+          </div>
+          <p id="demo-status" role="status"></p>
+        </div>
+        <div class="ds-component">
+          <h3>Información desplegable</h3>
+          <details>
+            <summary>¿Cómo funciona este componente?</summary>
+            <p>
+              Es HTML nativo: se puede abrir con Enter o Espacio y sigue
+              funcionando sin JavaScript.
+            </p>
+          </details>
+        </div>
+        <div class="ds-component">
+          <h3>Superficies</h3>
+          <div class="ds-surfaces">
+            <div class="paper surface-sample">Papel<br />Programa y áreas</div>
+            <div class="dark surface-sample">
+              Gris oscuro<br />Tendremos y preguntas
+            </div>
+            <div class="live-sample surface-sample">
+              Grano multicolor suave<br />La Sal Live
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section dark" id="movimiento">
+        <h2>Carga y movimiento</h2>
+        <p>
+          El skeleton reserva el espacio de una imagen. La interfaz sigue
+          disponible mientras llega el recurso.
+        </p>
+        <div class="ds-actions">
+          <button type="button" id="replay">Reproducir carga de ejemplo</button
+          ><label
+            ><input type="checkbox" id="reduce-demo" /> Sin movimiento en esta
+            demostración</label
+          >
+        </div>
+        <div class="media-shell ds-media loaded" id="demo-media">
+          <img
+            src="/src/assets/programa.webp"
+            width="1067"
+            height="794"
+            alt="Participantes de La Sal"
+            id="demo-image"
+          />
+        </div>
+        <p id="load-status" role="status">Imagen disponible.</p>
+        <p>
+          La animación real de bienvenida es decorativa, dura menos de dos
+          segundos y nunca bloquea la navegación.
+        </p>
+      </section>
+    </main>
+    <footer class="ds-footer">
+      Fuente de verdad: DESIGN.md y los tokens CSS. Esta página demuestra
+      componentes; no envía formularios ni inicia compras.
+    </footer>
+    <script type="module" src="/src/design-system.js"></script>
+  </body>
+</html>

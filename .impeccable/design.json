@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-07T04:41:12.430789+00:00",
+  "title": "Design System: La Sal 2027",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "area-rest",
+        "value": "0 8px 24px rgba(0,0,0,.08)",
+        "purpose": "Area card at rest."
+      },
+      {
+        "name": "area-hover",
+        "value": "0 14px 32px rgba(0,0,0,.13)",
+        "purpose": "Area hover without translation."
+      },
+      {
+        "name": "navigation",
+        "value": "-18px 0 50px rgba(12,20,60,.24)",
+        "purpose": "Modal side panel."
+      }
+    ],
+    "motion": [
+      {
+        "name": "heading-reveal",
+        "value": "450ms; opacity .7 to 1; translateY 12px to 0",
+        "purpose": "Motion in-view decorative heading reveal."
+      },
+      {
+        "name": "image-skeleton",
+        "value": "1.5s ease-in-out infinite",
+        "purpose": "Image loading only; static under reduced motion."
+      },
+      {
+        "name": "navigation",
+        "value": "360ms cubic-bezier(.22,1,.36,1)",
+        "purpose": "Retained panel transition."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "section-tablet",
+        "value": "1024px"
+      },
+      {
+        "name": "live-stack",
+        "value": "900px"
+      },
+      {
+        "name": "legacy-mobile",
+        "value": "767px"
+      },
+      {
+        "name": "section-mobile",
+        "value": "640px"
+      },
+      {
+        "name": "campus-stack",
+        "value": "600px"
+      },
+      {
+        "name": "hero-compact",
+        "value": "370px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "description": "Primary button from the current homepage.",
+      "html": "<a class=\"ds-primary\" href=\"#programa\">Ver programa completo</a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;min-height:48px;padding:12px 24px;background:var(--action,#c80c17);color:#fff;border-radius:4px;text-decoration:none;font:600 16px \"IBM Plex Mono\",monospace}.ds-primary:hover{background:#a50812}.ds-primary:focus-visible{outline:3px solid #566ed2;outline-offset:5px}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Ticket button",
+      "kind": "button",
+      "description": "Ticket button from the current homepage.",
+      "html": "<a class=\"ds-ticket\" href=\"#entradas\">Comprar entradas</a>",
+      "css": ".ds-ticket{display:inline-flex;align-items:center;min-height:48px;padding:12px 24px;background:var(--paper,#f6f2e9);color:var(--ink,#242424);border-radius:30px;text-decoration:none;font:600 16px \"IBM Plex Mono\",monospace}.ds-ticket:hover{background:#ddd7cb}.ds-ticket:focus-visible{outline:3px solid #566ed2;outline-offset:5px}",
+      "refersTo": "button-ticket"
+    },
+    {
+      "name": "FAQ search",
+      "kind": "input",
+      "description": "FAQ search from the current homepage.",
+      "html": "<label class=\"ds-label\" for=\"ds-search\">Buscar en las preguntas frecuentes</label><input class=\"ds-search\" id=\"ds-search\" type=\"search\" placeholder=\"Entradas, hospedaje, niños…\">",
+      "css": ".ds-label{display:block;margin-bottom:12px;font-family:\"IBM Plex Mono\",monospace}.ds-search{width:100%;min-height:54px;padding:14px 18px;border:1px solid #a4a4a4;background:#242424;color:white;border-radius:4px;font:16px \"IBM Plex Mono\",monospace}.ds-search::placeholder{color:#c8c8c8}.ds-search:focus-visible{outline:3px solid #566ed2;outline-offset:5px}"
+    },
+    {
+      "name": "Category filter",
+      "kind": "button",
+      "description": "Category filter from the current homepage.",
+      "html": "<button class=\"ds-filter\" aria-pressed=\"true\">General</button> <button class=\"ds-filter\" aria-pressed=\"false\">Registro</button>",
+      "css": ".ds-filter{padding:12px 18px;border:1px solid currentColor;border-radius:4px;background:#343434;color:white;font:16px \"IBM Plex Mono\",monospace;cursor:pointer}.ds-filter[aria-pressed=true]{background:var(--paper,#f6f2e9);color:var(--ink,#242424)}.ds-filter:hover{background:#ffffff18;color:#242424}.ds-filter:focus-visible{outline:3px solid #566ed2;outline-offset:5px}"
+    },
+    {
+      "name": "Area card",
+      "kind": "card",
+      "description": "Area card from the current homepage.",
+      "html": "<article class=\"ds-area\"><span class=\"ds-index\">01</span><h3>Alabanzas</h3><p>Este equipo guía a las personas a vivir una experiencia con Dios a través de la alabanza.</p></article>",
+      "css": ".ds-area{padding:40px 36px;background:#F2F2F2;color:#242424;border:1px solid #CFCFCF;border-radius:4px;font-family:\"IBM Plex Mono\",monospace;box-shadow:0 8px 24px rgba(0,0,0,.08);transition:background .3s,box-shadow .3s}.ds-area:hover{background:#E7E7E7;box-shadow:0 14px 32px rgba(0,0,0,.13)}.ds-index{display:block;font-size:11px;letter-spacing:.15em;margin-bottom:32px}.ds-area h3{font-size:clamp(17px,2vw,23px)}.ds-area p{font-size:14px;line-height:1.8}",
+      "refersTo": "area-card"
+    },
+    {
+      "name": "Navigation link",
+      "kind": "nav",
+      "description": "Navigation link from the current homepage.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-link\" href=\"#la-sal-live\">La Sal Live <span aria-hidden=\"true\">↗</span></a></nav>",
+      "css": ".ds-nav{background:rgba(55,71,139,.98);padding:24px;color:white}.ds-link{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid #ffffff40;color:inherit;text-decoration:none;font:24px \"IBM Plex Mono\",monospace;transition:padding-left 220ms ease,background-color 220ms ease}.ds-link:hover{padding-left:10px;background:rgba(255,255,255,.08)}.ds-link:focus-visible{outline:3px solid #566ed2;outline-offset:5px}"
+    },
+    {
+      "name": "FAQ disclosure",
+      "kind": "custom",
+      "description": "FAQ disclosure from the current homepage.",
+      "html": "<details class=\"ds-faq\"><summary>¿Cuándo y dónde es Conferencia La Sal?</summary><p>Del 26 al 28 de mayo de 2027, en caminodevida, Lima, Perú.</p></details>",
+      "css": ".ds-faq{background:#343434;color:#fffdf7;border-top:1px solid #858585;border-bottom:1px solid #858585;font:16px \"IBM Plex Mono\",monospace}.ds-faq summary{padding:24px 4px;line-height:1.6;font-weight:600;cursor:pointer}.ds-faq p{padding:0 4px 24px;line-height:1.8;color:#f5f1eb}.ds-faq summary:focus-visible{outline:3px solid #566ed2;outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "overview": "The existing conference identity is the authority: a textured event poster expressed through monospaced typography, generous section rhythm, large numbers, and contrasting paper and charcoal surfaces. “Textured event poster” is a description of the implementation, not a newly approved brand slogan.\n\nThe multicolor grain and supplied photography carry the atmosphere. Controls remain readable and familiar, while the numbered areas and editorial rules connect practical information to the conference identity. Preserve this language when adding screens.\n",
+    "keyCharacteristics": [
+      "IBM Plex Mono throughout.",
+      "Cream paper, dark sections, and multicolor grain.",
+      "Large activity figures and numbered area cards.",
+      "Restrained floating ticket and contact controls."
+    ],
+    "rules": [],
+    "dos": [
+      "Do preserve the supplied imagery, typography, numbered areas, and alternating surfaces.",
+      "Do keep readable text protection over textured images.",
+      "Do preserve keyboard focus, native FAQ disclosure, and reduced-motion behavior.",
+      "Do use the final cascade: legacy components, Live styles, then independent overrides."
+    ],
+    "donts": [
+      "Don't replace the incumbent identity with a generic component-library theme.",
+      "Don't reinstate clipped names, hidden essential content, or tiny hero footer text.",
+      "Don't infer unimplemented visual states or a dark-mode switch from this palette."
+    ]
+  }
+}

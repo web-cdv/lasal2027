@@ -1,0 +1,279 @@
+{
+  "semantic": {
+    "headings": [
+      {
+        "text": "2026",
+        "visible": false
+      },
+      {
+        "text": "Imagen\n&\nSemejanza",
+        "visible": true
+      },
+      {
+        "text": "Alabanzas",
+        "visible": true
+      },
+      {
+        "text": "Artesescénicas",
+        "visible": true
+      },
+      {
+        "text": "Comuni-caciones",
+        "visible": true
+      },
+      {
+        "text": "Producción",
+        "visible": true
+      },
+      {
+        "text": "Liderazgo",
+        "visible": true
+      }
+    ],
+    "faq": [
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      },
+      {
+        "tag": "DIV",
+        "tabindex": -1,
+        "expanded": null
+      }
+    ],
+    "search": "<input type=\"text\" id=\"searchInput\" class=\"search-input\" placeholder=\"Buscar (ej. entradas, hotel, niños)...\">",
+    "tabs": [
+      {
+        "role": null,
+        "selected": null
+      },
+      {
+        "role": null,
+        "selected": null
+      },
+      {
+        "role": null,
+        "selected": null
+      },
+      {
+        "role": null,
+        "selected": null
+      }
+    ],
+    "images": [
+      {
+        "src": "https://conferencialasal.com/wp-content/uploads/2026/09/logo-la-sal-1.png",
+        "alt": "Conferencia La Sal"
+      },
+      {
+        "src": "https://conferencialasal.com/wp-content/uploads/2026/04/Artes-web-1536x864.webp",
+        "alt": ""
+      },
+      {
+        "src": "https://conferencialasal.com/wp-content/uploads/2026/04/artes-cel-1587x2048.webp",
+        "alt": ""
+      },
+      {
+        "src": "https://conferencialasal.com/wp-content/uploads/2026/09/Foto-programa.png",
+        "alt": ""
+      }
+    ]
+  },
+  "sizes": [
+    {
+      "width": 320,
+      "overflow": false,
+      "bar": {
+        "x": 16,
+        "y": 705.21875,
+        "width": 288,
+        "height": 122.78125,
+        "top": 705.21875,
+        "right": 304,
+        "bottom": 828,
+        "left": 16
+      },
+      "whatsapp": {
+        "x": 235,
+        "y": 654,
+        "width": 60,
+        "height": 60,
+        "top": 654,
+        "right": 295,
+        "bottom": 714,
+        "left": 235
+      }
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "bar": {
+        "x": 16,
+        "y": 705.21875,
+        "width": 358,
+        "height": 122.78125,
+        "top": 705.21875,
+        "right": 374,
+        "bottom": 828,
+        "left": 16
+      },
+      "whatsapp": {
+        "x": 305,
+        "y": 654,
+        "width": 60,
+        "height": 60,
+        "top": 654,
+        "right": 365,
+        "bottom": 714,
+        "left": 305
+      }
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "bar": {
+        "x": 94,
+        "y": 744.40625,
+        "width": 580,
+        "height": 79.59375,
+        "top": 744.40625,
+        "right": 674,
+        "bottom": 824,
+        "left": 94
+      },
+      "whatsapp": {
+        "x": 683,
+        "y": 654,
+        "width": 60,
+        "height": 60,
+        "top": 654,
+        "right": 743,
+        "bottom": 714,
+        "left": 683
+      }
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "bar": {
+        "x": 222,
+        "y": 744.40625,
+        "width": 580,
+        "height": 79.59375,
+        "top": 744.40625,
+        "right": 802,
+        "bottom": 824,
+        "left": 222
+      },
+      "whatsapp": {
+        "x": 939,
+        "y": 674,
+        "width": 60,
+        "height": 60,
+        "top": 674,
+        "right": 999,
+        "bottom": 734,
+        "left": 939
+      }
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "bar": {
+        "x": 360,
+        "y": 744.40625,
+        "width": 720,
+        "height": 79.59375,
+        "top": 744.40625,
+        "right": 1080,
+        "bottom": 824,
+        "left": 360
+      },
+      "whatsapp": {
+        "x": 1355,
+        "y": 674,
+        "width": 60,
+        "height": 60,
+        "top": 674,
+        "right": 1415,
+        "bottom": 734,
+        "left": 1355
+      }
+    }
+  ],
+  "menuOpen": true,
+  "menuClosed": true,
+  "focusReturned": true,
+  "search": {
+    "entrada": 4,
+    "bebes": 2,
+    "bebés": 2,
+    "zzzzzz": 0
+  }
+}

@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+<style>
+  .ls-live {
+    --live-bg: #f6f2e9;
+    --live-text: #242424;
+    --live-accent: #37478b;
+    --live-line: #878279;
+    box-sizing: border-box;
+    padding: clamp(48px, 7vw, 96px) 56px;
+    background: var(--live-bg);
+    color: var(--live-text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.8;
+    scroll-margin-top: 24px;
+    overflow-wrap: anywhere;
+  }
+  .ls-live *, .ls-live *::before, .ls-live *::after { box-sizing: border-box; min-width: 0; }
+  .ls-live ::selection { background: var(--live-accent); color: #ffffff; }
+  .ls-live .ls-live__inner { width: 100%; max-width: none; margin-inline: 0; }
+  .ls-live :is(h2,h3,h4,h5,p,ul) { margin: 0; padding: 0; color: inherit; font-family: inherit; }
+  .ls-live .ls-live__intro { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(32px,5vw,72px); align-items: start; }
+  .ls-live .ls-live__title { font-size: clamp(40px,6vw,80px); font-weight: 400; line-height: 1.05; letter-spacing: -.035em; text-transform: uppercase; }
+  .ls-live .ls-live__subtitle { margin-top: 20px; color: var(--live-accent); font-size: clamp(16px,2vw,20px); line-height: 1.5; }
+  .ls-live .ls-live__question { font-size: clamp(20px,2.1vw,26px); font-weight: 600; line-height: 1.5; margin-bottom: 24px; text-wrap: balance; }
+  .ls-live .ls-live__copy { max-width: 65ch; text-wrap: pretty; }
+  .ls-live .ls-live__copy + .ls-live__copy { margin-top: 16px; }
+  .ls-live .ls-live__schedule { margin-top: clamp(48px,6vw,80px); }
+  .ls-live .ls-live__heading { font-size: 24px; font-weight: 600; line-height: 1.4; margin-bottom: 24px; }
+  .ls-live .ls-live__day { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; padding-block: 32px; border-top: 1px solid var(--live-line); }
+  .ls-live .ls-live__day:last-child { border-bottom: 1px solid var(--live-line); }
+  .ls-live .ls-live__date { font-size: clamp(22px,2.6vw,32px); font-weight: 500; line-height: 1.3; }
+  .ls-live .ls-live__date small { display: block; margin-top: 10px; font-size: .9375rem; font-weight: 400; color: var(--live-accent); }
+  .ls-live .ls-live__campuses { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; }
+  .ls-live .ls-live__campus h5 { font-size: 18px; font-weight: 600; line-height: 1.5; }
+  .ls-live .ls-live__address { margin-top: 4px; font-size: .9375rem; }
+  .ls-live .ls-live__times { list-style: none; margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px 12px; }
+  .ls-live .ls-live__times li { font-variant-numeric: tabular-nums; }
+  .ls-live .ls-live__separator { margin-inline-start: 12px; }
+  .ls-live .ls-live__times--youth { flex-direction: column; }
+  .ls-live .ls-live__times span { color: var(--live-accent); }
+  .ls-live .ls-live__join { margin-top: 48px; max-width: 72ch; }
+  .ls-live .ls-live__closing { margin-top: 24px; color: var(--live-accent); font-weight: 600; font-size: clamp(18px,2vw,22px); }
+  @media (max-width: 1024px) {
+    .ls-live { padding-inline: 36px; }
+  }
+  @media (max-width: 640px) {
+    .ls-live { padding-inline: 20px; }
+  }
+  @media (max-width: 900px) {
+    .ls-live .ls-live__intro { grid-template-columns: 1fr; }
+    .ls-live .ls-live__day { grid-template-columns: 1fr; gap: 24px; }
+  }
+  @media (max-width: 600px) {
+    .ls-live .ls-live__campuses { grid-template-columns: 1fr; gap: 32px; }
+    .ls-live .ls-live__times { gap: 8px 12px; }
+  }
+</style>
+
+<section class="ls-live" aria-label="La Sal Live">
+  <div class="ls-live__inner">
+    <div class="ls-live__intro">
+      <header>
+        <h2 class="ls-live__title">La Sal Live</h2>
+        <p class="ls-live__subtitle">[el detrás de escenas]</p>
+      </header>
+      <div>
+        <p class="ls-live__question">¿Te gustaría ver todo el despliegue de lo que se prepara para nuestros servicios?</p>
+        <p class="ls-live__copy">Desde luces, sonido, producción, comunicaciones, la bienvenida, la alabanza, todo lo que sea posible te lo mostraremos.</p>
+        <p class="ls-live__copy">Puedes preguntar lo que desees, observar todo, estaremos encantados de que seas parte de toda esta experiencia del “antes de” junto a nuestro equipo tanto el sábado, en los servicios juveniles como el domingo en nuestros dos campus.</p>
+      </div>
+    </div>
+
+    <div class="ls-live__schedule">
+      <h3 class="ls-live__heading">Horarios</h3>
+      <div class="ls-live__day">
+        <h4 class="ls-live__date"><time datetime="2027-05-29">Sábado 29<small>Mayo de 2027</small></time></h4>
+        <div class="ls-live__campus">
+          <h5>Campus Surco</h5>
+          <p class="ls-live__address">Buen Retiro 100</p>
+          <ul class="ls-live__times ls-live__times--youth">
+            <li><time datetime="16:30">4:30 p. m.</time> <span>- Getup</span></li>
+            <li><time datetime="19:30">7:30 p. m.</time> <span>- Central</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ls-live__day">
+        <h4 class="ls-live__date"><time datetime="2027-05-30">Domingo 30<small>Mayo de 2027</small></time></h4>
+        <div class="ls-live__campuses">
+          <div class="ls-live__campus">
+            <h5>Campus Surco</h5>
+            <p class="ls-live__address">Buen Retiro 100</p>
+            <ul class="ls-live__times">
+              <li><time datetime="08:00">8 a. m.</time> <span class="ls-live__separator" aria-hidden="true">-</span></li>
+              <li><time datetime="10:00">10 a. m.</time> <span class="ls-live__separator" aria-hidden="true">-</span></li>
+              <li><time datetime="12:00">12 m.</time> <span class="ls-live__separator" aria-hidden="true">-</span></li>
+              <li><time datetime="17:00">5 p. m.</time></li>
+            </ul>
+          </div>
+          <div class="ls-live__campus">
+            <h5>Campus Miraflores</h5>
+            <p class="ls-live__address">Calle Diego Ferré</p>
+            <ul class="ls-live__times">
+              <li><time datetime="09:00">9 a. m.</time> <span class="ls-live__separator" aria-hidden="true">-</span></li>
+              <li><time datetime="11:00">11 a. m.</time> <span class="ls-live__separator" aria-hidden="true">-</span></li>
+              <li><time datetime="13:00">1 p. m.</time></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ls-live__join">
+      <h3 class="ls-live__heading">¿Cómo ser parte?</h3>
+      <p>Si ya tienes tu entrada, en el mes de marzo te llegará un correo con un formulario para que puedas poner tus datos e inscribirte.</p>
+      <p class="ls-live__closing">Si vienes a La Sal, ¡quédate a La Sal Live!</p>
+    </div>
+  </div>
+</section>

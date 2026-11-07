@@ -1,0 +1,153 @@
+[
+  {
+    "antipattern": "undersized-ui-text",
+    "name": "Undersized functional text",
+    "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "9px functional text \"Para pastores y sus equipos creativos\" (below 10px floor)",
+    "selector": "footer.is-hero__footer > p:nth-of-type(1)"
+  },
+  {
+    "antipattern": "undersized-ui-text",
+    "name": "Undersized functional text",
+    "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "9px functional text \"Lima · Perú\" (below 10px floor)",
+    "selector": "footer.is-hero__footer > p:nth-of-type(2)"
+  },
+  {
+    "antipattern": "undersized-ui-text",
+    "name": "Undersized functional text",
+    "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "9px functional text \"Buen Retiro 100, Monterrico · Surco\" (below 10px floor)",
+    "selector": "p:nth-of-type(3)"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "4.2:1 (need 4.5:1) — text #ffffff on #f6121c",
+    "advisory": true,
+    "selector": "span.elementor-button-text"
+  },
+  {
+    "antipattern": "straggler",
+    "name": "Straggler",
+    "description": "The last line of this paragraph holds one word, which leaves a hole under the block. Set text-wrap: pretty on body copy (Chrome, Safari) to pull a word down beside it. Where a browser ignores it, edit the last sentence or bind the last two words with a no-break space. Keep it if the break is intended.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "\"puesto.\" alone on the last of 7 lines (22% of the measure)",
+    "advisory": true,
+    "selector": "div.ar-card:nth-of-type(5) > p.ar-desc"
+  },
+  {
+    "antipattern": "straggler",
+    "name": "Straggler",
+    "description": "The last line of this paragraph holds one word, which leaves a hole under the block. Set text-wrap: pretty on body copy (Chrome, Safari) to pull a word down beside it. Where a browser ignores it, edit the last sentence or bind the last two words with a no-break space. Keep it if the break is intended.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "\"alcance.\" alone on the last of 2 lines (25% of the measure)",
+    "advisory": true,
+    "selector": "div.elementor-element.elementor-element-d58178b > p"
+  },
+  {
+    "antipattern": "numbered-section-labels",
+    "name": "Tiny numbered section labels",
+    "description": "Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "tiny numbered label \"01\" beside h3 \"Alabanzas\" (5 on page)",
+    "advisory": true,
+    "selector": "body"
+  },
+  {
+    "antipattern": "numbered-section-labels",
+    "name": "Tiny numbered section labels",
+    "description": "Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "tiny numbered label \"02\" beside h3 \"Artesescénicas\" (5 on page)",
+    "advisory": true,
+    "selector": "body"
+  },
+  {
+    "antipattern": "numbered-section-labels",
+    "name": "Tiny numbered section labels",
+    "description": "Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "tiny numbered label \"03\" beside h3 \"Comuni-caciones\" (5 on page)",
+    "advisory": true,
+    "selector": "body"
+  },
+  {
+    "antipattern": "numbered-section-labels",
+    "name": "Tiny numbered section labels",
+    "description": "Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "tiny numbered label \"04\" beside h3 \"Producción\" (5 on page)",
+    "advisory": true,
+    "selector": "body"
+  },
+  {
+    "antipattern": "numbered-section-labels",
+    "name": "Tiny numbered section labels",
+    "description": "Small numeric index labels riding next to section headings, repeated section after section, are AI editorial scaffolding — a page numbering its own chapters instead of earning structure. Let hierarchy, content, and rhythm carry the sequence.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "tiny numbered label \"05\" beside h3 \"Liderazgo\" (5 on page)",
+    "advisory": true,
+    "selector": "body"
+  },
+  {
+    "antipattern": "skipped-heading",
+    "name": "Skipped heading level",
+    "description": "Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for navigation. Skipping levels breaks the document outline.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "<h1> \"Imagen & Semejanza\" followed by <h3> \"Alabanzas\" (missing h2)",
+    "selector": "body"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "https://conferencialasal.com/",
+    "line": 0,
+    "snippet": "browser contrast 2.6:1 median 2.6:1 (need 4.5:1) via canvas-background-image \"La Sal – conferencia creativa y de liderazgo de caminodevida diseñada para ayuda\"",
+    "selector": "div.elementor-element.elementor-element-84c7ab4 > p"
+  }
+]
