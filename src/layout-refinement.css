@@ -149,3 +149,31 @@ body .scroll-statement .mission-bands { width: 100%; max-width: none; }
 body #is-hero .is-hero__footer { margin-top: 56px; }
 @media(max-width:640px) { body #is-hero .is-hero__footer { margin-top: 32px; } }
 @media(prefers-reduced-motion:reduce) { .reveal-word { opacity: 1 !important; filter: none !important; } }
+
+/* Compact date poster, following the supplied campaign composition. */
+body #is-hero .is-hero__title { font-size: clamp(20px,2vw,28px); margin: 0; }
+body #is-hero .is-hero__year { display: none; }
+body .date-route { width: min(100%,1000px); margin: 72px auto 0; height: clamp(190px,22vw,280px); }
+body .date-route__labels { font-family: Arial,Helvetica,sans-serif; font-size: clamp(38px,5.2vw,72px); font-style: italic; font-weight: 700; color: #fffdf1; }
+body .date-route__line { stroke: #fffdf1; stroke-width: 2; }
+body .date-route__labels .route-27 { left: 23%; }
+body .date-route__labels .route-28 { left: 59%; }
+body .date-route__labels .route-month { left: 79%; font-size: clamp(36px,5.2vw,72px); font-style: normal; translate: 0 -50%; }
+body .date-route__labels .route-month span { margin: 0 0 0 22px; }
+body .date-route__labels .route-month b { left: 0; top: 50%; bottom: auto; translate: 0 -50%; }
+body .date-route__labels b { font-size: 24px; }
+.poster-caption { display: flex; justify-content: space-between; gap: 24px; margin: 64px auto 0; max-width: 1000px; color: #fff9df; font-weight: 600; font-size: clamp(14px,1.7vw,22px); }
+@media(max-width:640px) {
+ body .date-route { margin-top: 40px; width: 100%; }
+ body .date-route__labels { font-size: clamp(32px,9vw,44px); }
+ body .date-route__labels .route-month { font-size: clamp(24px,6vw,32px); left: 79%; }
+ body .date-route__labels .route-month span { margin-left: 15px; }
+ body .date-route__labels b { font-size: 18px; }
+ body .poster-caption { margin-top: 36px; font-size: 13px; }
+}
+@media(max-width:640px) {
+ body .date-route__labels .route-month { translate: -50% -100%; }
+ body .date-route__labels .route-month span { margin: 0 0 10px; }
+ body .date-route__labels .route-month b { left: 50%; top: 100%; }
+}
+body #is-hero .poster-caption { width: 100%; text-align: left; }

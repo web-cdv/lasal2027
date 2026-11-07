@@ -103,3 +103,9 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Texto de propósito revelado por palabras con Motion: scrub reversible ligado al scroll, fade .15→1, blur 4→0px, duración .8 y stagger .2; sin rotación, desplazamiento ni suavizado adicional.
 - Texto semántico presente en HTML sin duplicación; sin JavaScript y con movimiento reducido se muestra íntegro.
 - Fila de público/ubicación/dirección del hero bajada 56px en escritorio y 32px en móvil, manteniendo el color oscuro.
+
+## 2026-11-07 — Composición de fechas fiel a la referencia
+
+- Ruta compacta con 26/27/28 inclinados, mayo en minúscula al lado del último punto, línea fina y estrellas pequeñas. Pie Conferencia La Sal 2027 / Lima – Perú. Tema Imagen & Semejanza secundario y año circular sustituido visualmente por el pie.
+- Azul ultramar profundo, coral más vivo, horizonte elevado y grano multiescala con agrupaciones, motas y fibras procedurales; sin imagen superpuesta.
+- Responsive sin overflow a 320/390/768/1440px. Se conserva el texto accesible con todas las fechas.
