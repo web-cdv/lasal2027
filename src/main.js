@@ -140,6 +140,59 @@ filters.forEach((b) =>
 search.addEventListener("input", () => filter());
 document.querySelector('.faq-prompt__clear').addEventListener('click',()=>{search.value='';filter();search.focus();});
 filter(false);
+// Keep native details/summary semantics while easing between measured heights.
+items.forEach(item=>{
+ const summary=item.querySelector('summary');
+ let animation;
+ let desired=item.open;
+ summary.addEventListener('click',event=>{
+  event.preventDefault();
+  const start=item.getBoundingClientRect().height;
+  desired=animation ? !desired : !item.open;
+  animation?.cancel();
+  if(motionPreference.matches){item.open=desired;animation=null;return;}
+  item.open=true;
+  const end=desired ? item.getBoundingClientRect().height : summary.getBoundingClientRect().height;
+  item.style.overflow='hidden';
+  animation=item.animate({height:[start+'px',end+'px']},{duration:320,easing:'cubic-bezier(.22,1,.36,1)',fill:'both'});
+  const current=animation;
+  current.onfinish=()=>{if(animation!==current)return;item.open=desired;current.cancel();item.style.overflow='';animation=null;};
+ });
+});
+// Reserve the tallest category at the current width; expanded answers may grow
+// the reserve, so changing filters never collapses the section underneath them.
+const faqList = document.querySelector('.faq-list');
+let faqWidth = 0;
+let faqReserve = 0;
+function measureFaqCategories() {
+  faqWidth = faqList.getBoundingClientRect().width;
+  if (!faqWidth) return;
+  let tallest = 0;
+  for (const button of filters) {
+    const clone = faqList.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.setAttribute('aria-hidden','true');
+    clone.inert = true;
+    Object.assign(clone.style,{position:'absolute',top:'0',left:'0',width:faqWidth+'px',minHeight:'0',height:'auto',visibility:'hidden',margin:'0',pointerEvents:'none'});
+    clone.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));
+    clone.querySelectorAll('details').forEach(el=>{
+      if(el.dataset.category!==button.dataset.category) el.remove();
+      else {el.hidden=false;el.open=false;}
+    });
+    faqList.parentElement.append(clone);
+    tallest = Math.max(tallest,clone.getBoundingClientRect().height);
+    clone.remove();
+  }
+  faqReserve=Math.ceil(tallest);
+  faqList.style.minHeight=faqReserve+'px';
+}
+new ResizeObserver(()=>{
+  if(Math.abs(faqList.getBoundingClientRect().width-faqWidth)>.5) measureFaqCategories();
+  const height=Math.ceil(faqList.getBoundingClientRect().height);
+  if(height>faqReserve){faqReserve=height;faqList.style.minHeight=height+'px';}
+}).observe(faqList);
+measureFaqCategories();
+document.fonts.ready.then(measureFaqCategories);
 const actions = document.querySelector(".floating-actions");
 new ResizeObserver(() => {
   document.documentElement.style.setProperty(

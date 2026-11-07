@@ -88,3 +88,10 @@ Pendiente: Safari/Firefox, dispositivos físicos y lector de pantalla; proveedor
 - Configuración: blanco normal/acento, spacing11, amplitud37, twist.5, speed1, radio175, strength.9, sólido, ancho.75, rotación0, escala1, variación3, bounce.3, return1.4, fade0, opacidad.2, mouse/click/intro activos, lightModefalse.
 - ResizeObserver adapta el canvas a las respuestas y filtros; DPR1, pausa fuera de vista y pestaña oculta, movimiento reducido estático y fondo carbón de respaldo sin WebGL.
 - Build y pruebas responsive, teclado/búsqueda y axe aprobadas; WebGL comprobado con Chromium SwiftShader sin errores JS.
+
+## 2026-11-07 — FAQ estable y propuesta Tendremos aplicada
+
+- FAQ reserva la altura de la categoría más alta para el ancho actual; se recalcula al cambiar ancho/fuentes. Respuestas abiertas pueden aumentar la reserva, que se conserva al filtrar. Estado de resultados con espacio reservado.
+- Recuperados iconos SVG de información, ticket, avión y ayuda. Acordeón nativo details/summary con chevron rotativo y animación medida de 320ms; movimiento reducido sin animación, sin max-height que recorte respuestas.
+- Propuesta Tendremos aprobada y aplicada: tres formatos en la columna izquierda, Mesas en la derecha con título junto al24, descripción y notas. Una columna bajo900px. Separadores estructurales y superficies planas preservados.
+- 16 pruebas aprobadas incluyendo altura constante por categoría y búsqueda sin resultados en móvil/escritorio.

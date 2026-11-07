@@ -219,3 +219,44 @@ body .faq-prompt__clear:hover { background: #4b4b52; }
 body #preguntas { position: relative; isolation: isolate; }
 .faq-waves { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
 .faq-waves:not([data-ready]), .faq-waves[hidden] { visibility: hidden; }
+
+/* Stable space for result announcements, including empty and no-match states. */
+body #faq-status { min-height: 3lh; margin-block: 16px; }
+
+/* Original category cues, with a quiet rotating accordion chevron. */
+body .faq-filters .faq-filter-options button { gap: 8px; }
+.faq-tab-icon { width: 18px; height: 18px; flex-shrink: 0; }
+body .faq-filter-options .pill-highlighted .faq-tab-icon { color: var(--ink); }
+body .faq-list summary::after { content: ''; width: 9px; height: 9px; border-right: 1.5px solid currentColor !important; border-bottom: 1.5px solid currentColor !important; transform: rotate(45deg); top: 31px; right: 8px; transition: transform .25s ease; }
+body .faq-list details[open] summary::after { transform: rotate(225deg); }
+body .faq-list .faq-answer { padding: 20px 24px 24px; max-width: none; background: #00000018; border-radius: 12px; margin-bottom: 20px; }
+@media(max-width:640px) { body .faq-filters .faq-filter-options button { flex-direction: column; gap: 5px; padding: 10px 8px; } }
+@media(prefers-reduced-motion:reduce) { body .faq-list summary::after { transition: none; } }
+/* Approved Tendremos proposal: three formats alongside a dedicated Mesas column. */
+body #tendremos .ls-wrap { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); column-gap: clamp(40px,6vw,96px); }
+body #tendremos .ls-row { grid-column: 1; grid-template-columns: 100px minmax(0,1fr); gap: 24px; }
+body #tendremos .ls-row--full { grid-column: 2; grid-row: 1 / span 3; display: block; align-self: start; }
+body #tendremos .ls-row--full .ls-cell { display: block; }
+body #tendremos .ls-cell { padding-block: 32px; }
+body #tendremos .ls-num { font-size: clamp(64px,6vw,88px); }
+body #tendremos .ls-row--full .ls-num { font-size: clamp(88px,10vw,144px); }
+body #tendremos .ls-kicker { font-size: clamp(19px,1.7vw,24px); margin-bottom: 16px; }
+body #tendremos .ls-desc { max-width: 54ch; }
+body #tendremos .ls-notas { margin-top: 24px; }
+body #tendremos .ls-nota { padding-block: 12px; }
+body #tendremos .ls-row--full { border-bottom: 0 !important; }
+@media(max-width:900px) {
+ body #tendremos .ls-wrap { grid-template-columns: 1fr; }
+ body #tendremos .ls-row--full { grid-column: 1; grid-row: auto; }
+}
+@media(max-width:540px) {
+ body #tendremos .ls-row { grid-template-columns: 64px minmax(0,1fr); gap: 20px; }
+ body #tendremos .ls-num { font-size: 60px; }
+ body #tendremos .ls-row--full .ls-num { font-size: 100px; }
+}
+
+body #tendremos .ls-num { font-family: Arial,Helvetica,sans-serif; font-weight: 600; line-height: 1; }
+body #tendremos .ls-mesas-header { display: flex; align-items: baseline; gap: 24px; margin-bottom: 24px; }
+body #tendremos .ls-mesas-header .ls-kicker { font-size: clamp(26px,3vw,40px); margin: 0; }
+body #tendremos .ls-nota-text { font-size: 15px; }
+@media(max-width:640px) { body .faq-filters .faq-filter-options button { padding-inline: 6px; } }

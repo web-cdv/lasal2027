@@ -222,3 +222,23 @@ test('open menu remains readable and keyboard accessible at narrow widths', asyn
   await page.getByRole('button',{name:'Cerrar menú'}).click();
   await expect(page.locator('.lasal-nav-toggle')).toBeFocused();
 });
+
+
+test('FAQ section keeps its height across categories and empty search', async ({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.goto('/');
+ await page.evaluate(()=>document.fonts.ready);
+ for(const width of [390,1440]) {
+  await page.setViewportSize({width,height:900});
+  await page.getByRole('button',{name:'General',exact:true}).click();
+  const section=page.locator('#preguntas');
+  const height=await section.evaluate(e=>e.getBoundingClientRect().height);
+  for(const name of ['Registro','Extranjero','Otros','General']) {
+   await page.getByRole('button',{name,exact:true}).click();
+   await expect.poll(()=>section.evaluate(e=>e.getBoundingClientRect().height)).toBeCloseTo(height,0);
+  }
+  await page.locator('#faq-search').fill('zzzzzz');
+  await expect.poll(()=>section.evaluate(e=>e.getBoundingClientRect().height)).toBeCloseTo(height,0);
+  await page.getByRole('button',{name:'Borrar búsqueda'}).click();
+ }
+});

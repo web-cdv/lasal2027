@@ -34,10 +34,24 @@ $(".lasal-nav-link").each((i, el) => {
   const label = link.find("span").length ? link.find("span").eq(1).text() : link.text();
   link.html(`<span class="lasal-nav-number" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><span>${esc(label)}</span><span class="lasal-nav-arrow" aria-hidden="true">↗</span>`);
 });
+const categoryIcons = {
+ general: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/>',
+ registro: '<path d="M3 6h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4V6Z"/><path d="M15 6v3m0 2v2m0 2v3"/>',
+ extranjero: '<path d="m21 3-6 18-4-8-8-4 18-6ZM11 13 21 3"/>',
+ otros: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 .5c0 1.5-2.5 1.5-2.5 3.5m0 3v1"/>'
+};
+$('.faq-filter-options button').each((_,el)=>{
+ const button=$(el);
+ button.find('span').last().before(`<svg class="faq-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${categoryIcons[button.attr('data-category')]||''}</svg>`);
+});
 $(".ls-kicker").each((i, e) => {
   const h = $("<h3>").attr("class", $(e).attr("class")).text($(e).text());
   $(e).replaceWith(h);
 });
+const mesas = $('.ls-row--full .ls-cell > div').first();
+const mesasHeader = $('<div class="ls-mesas-header"></div>');
+mesasHeader.append(mesas.children('.ls-num'), mesas.children('.ls-kicker'));
+mesas.prepend(mesasHeader);
 $('a[target="_blank"]').attr("rel", "noopener noreferrer");
 $("script:not([src])").remove();
 $(".is-hero__year").attr("role", "img");
