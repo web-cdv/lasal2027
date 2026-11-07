@@ -145,6 +145,8 @@ test("ribbon advances autonomously, pauses on interaction and respects reduced m
   await ribbon.scrollIntoViewIfNeeded();
   await page.mouse.move(0, 0);
   await expect(track).toHaveCSS("animation-play-state", "running");
+  expect(await page.locator(".ribbon-copy").first().evaluate(e=>e.getBoundingClientRect().width>=innerWidth)).toBeTruthy();
+  await expect(track).toHaveCSS("animation-iteration-count", "infinite");
   const initial = await track.evaluate(e => getComputedStyle(e).transform);
   await expect.poll(() => track.evaluate(e => getComputedStyle(e).transform)).not.toBe(initial);
   await ribbon.focus();

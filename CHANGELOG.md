@@ -118,3 +118,5 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Texto de propósito: revelado sólo por opacidad, sin blur; ancho de lectura 42ch, líneas naturales equilibradas, alineación izquierda y alturas de línea consistentes en móvil/escritorio.
 
 - Fila práctica del hero recolocada más abajo: 128px de separación en escritorio, 72px en móvil; conserva el color oscuro.
+
+- Cintillo en bucle continuo con dos copias de al menos un viewport cada una, evitando huecos en pantallas amplias y conservando el reinicio a -50%.
