@@ -197,3 +197,5 @@ if (ga) {
 import("./grainient.js").then(({ initGrainient }) => initGrainient(document.querySelector(".hero-surface"))).catch(() => {});
 
 import('./area-spotlights.js').then(({initAreaSpotlights})=>initAreaSpotlights(motionPreference));
+
+import('./faq-waves.js').then(({initFaqWaves})=>initFaqWaves(document.querySelector('#preguntas'))).catch(()=>{});

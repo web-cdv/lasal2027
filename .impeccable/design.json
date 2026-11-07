@@ -53,7 +53,8 @@
       "menu": "Right staggered drawer, lilac/violet prelayers, paper index, real section links and social links.",
       "controls": "Borderless surfaces, dark spotlight area cards; retain keyboard focus outlines.",
       "motion": "32s autonomous ribbon, no scroll binding, pauses on hover/focus/tap and offscreen. Reduced motion is static.",
-      "search": "Prompt Bar-inspired single charcoal surface, 16px radius, search icon, labelled native input, 44px clear button; no decorative border/shadow."
+      "search": "Prompt Bar-inspired single charcoal surface, 16px radius, search icon, labelled native input, 44px clear button; no decorative border/shadow.",
+      "faqBackground": "React Bits Waves adapted to WebGL2, white solid .75px lines, spacing11, amplitude37, opacity.2, pointer/click/intro; reduced-motion static, offscreen pause."
     },
     "motionRevision": {
       "source": "src/motion-effects.js",

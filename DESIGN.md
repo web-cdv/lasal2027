@@ -248,3 +248,10 @@ El cintillo usa un bucle autónomo, independiente del scroll; consultar la revis
 - Conserva etiqueta accesible, resultados anunciados, búsqueda por tildes/categorías y foco de teclado. Borrar devuelve el foco al input; control mínimo44px.
 - Revisión integrada: cintillo con copias de al menos100vw, revelado del propósito sin blur, líneas equilibradas y fila práctica del hero bajada manteniendo texto oscuro.
 - Propuesta HTML alternativa de Tendremos permanece sin aplicar.
+
+## 2026-11-07 — Waves en FAQ
+
+- Código Waves proporcionado verificado contra la fuente de React Bits y adaptado a JavaScript/WebGL2, sin añadir React. Sólo #preguntas, decorativo aria-hidden y pointer-events none.
+- Configuración: blanco normal/acento, spacing11, amplitud37, twist.5, speed1, radio175, strength.9, sólido, ancho.75, rotación0, escala1, variación3, bounce.3, return1.4, fade0, opacidad.2, mouse/click/intro activos, lightModefalse.
+- ResizeObserver adapta el canvas a las respuestas y filtros; DPR1, pausa fuera de vista y pestaña oculta, movimiento reducido estático y fondo carbón de respaldo sin WebGL.
+- Build y pruebas responsive, teclado/búsqueda y axe aprobadas; WebGL comprobado con Chromium SwiftShader sin errores JS.
