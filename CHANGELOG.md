@@ -141,3 +141,5 @@ This log records implementation and local verification. Hosting/domain cutover h
 - Recuperados iconos SVG de información, ticket, avión y ayuda. Acordeón nativo details/summary con chevron rotativo y animación medida de 320ms; movimiento reducido sin animación, sin max-height que recorte respuestas.
 - Propuesta Tendremos aprobada y aplicada: tres formatos en la columna izquierda, Mesas en la derecha con título junto al24, descripción y notas. Una columna bajo900px. Separadores estructurales y superficies planas preservados.
 - 16 pruebas aprobadas incluyendo altura constante por categoría y búsqueda sin resultados en móvil/escritorio.
+
+- Áreas: superficie blanca opaca más clara que el papel jaspeado. Spotlight circular lavanda .20 para distinguir el movimiento sobre blanco, radio240, suavidad.7 y flare; sin luz ambiental, bordes ni sombras.
